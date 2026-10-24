@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <Property name="programa">${sys:programa:-app}</Property>
+        <Property name="dirEvidencias">logs/evidencias</Property>
+        <Property name="dirRuntime">logs/runtime</Property>
+        <Property name="patron">%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t] %c{1} - %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Consola" target="SYSTEM_OUT">
+            <PatternLayout pattern="${patron}"/>
+        </Console>
+
+        <File name="Evidencias"
+              fileName="${dirEvidencias}/${programa}_${date:yyyy-MM-dd_HH-mm-ss}.log">
+            <PatternLayout pattern="${patron}"/>
+        </File>
+
+        <RollingFile name="Runtime"
+                     fileName="${dirRuntime}/${programa}.log"
+                     filePattern="${dirRuntime}/${programa}-%i.log.gz">
+            <PatternLayout pattern="${patron}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="Consola" level="INFO"/>
+            <AppenderRef ref="Evidencias"/>
+            <AppenderRef ref="Runtime"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
