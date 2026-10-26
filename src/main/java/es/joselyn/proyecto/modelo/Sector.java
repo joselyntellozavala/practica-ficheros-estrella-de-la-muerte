@@ -3,6 +3,9 @@ package es.joselyn.proyecto.modelo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sector {
 
     private static final Logger log = LogManager.getLogger(Sector.class);
@@ -10,11 +13,13 @@ public class Sector {
     private final String idSector;
     private final TipoSector tipoSector;
     private EstadoSector estadoSector;
+    private final List<Subsistema> listaSubsistemas;
 
     public Sector(String idSector, TipoSector tipoSector, EstadoSector estadoSector) {
         this.idSector = idSector;
         this.tipoSector = tipoSector;
         this.estadoSector = estadoSector;
+        this.listaSubsistemas = new ArrayList<>();
 
         log.debug("Sector creado: id={}, tipo={}, estado={}", idSector, tipoSector, estadoSector);
     }
@@ -36,5 +41,22 @@ public class Sector {
         this.estadoSector = nuevoEstado;
 
         log.debug("Sector {} cambia de estado: {} -> {}", idSector, anterior, nuevoEstado);
+    }
+
+    public void agregarSubsistema(Subsistema subsistema) {
+        if (!subsistema.getIdSector().equals(idSector)) {
+            throw new IllegalArgumentException("El subsistema " + subsistema.getIdSubsistema() + " pertenece a " + subsistema.getIdSector() + ", no se puede añadir a " + idSector);
+        }
+        listaSubsistemas.add(subsistema);
+        log.debug("Subsistema {} añadido a {}", subsistema.getIdSubsistema(), idSector);
+    }
+
+    public List<Subsistema> getListaSubsistemas() {
+        return List.copyOf(listaSubsistemas);
+    }
+
+    @Override
+    public String toString() {
+        return "Sector[" + idSector + ", " + tipoSector + "]";
     }
 }
