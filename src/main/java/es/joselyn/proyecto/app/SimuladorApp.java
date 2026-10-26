@@ -1,8 +1,6 @@
 package es.joselyn.proyecto.app;
 
-import es.joselyn.proyecto.modelo.EstadoSector;
-import es.joselyn.proyecto.modelo.Sector;
-import es.joselyn.proyecto.modelo.TipoSector;
+import es.joselyn.proyecto.modelo.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,6 +25,14 @@ public class SimuladorApp {
         Sector residuos = new Sector("SEC-05", TipoSector.RESIDUOS, EstadoSector.OPERATIVO);
         Sector superficie = new Sector("SEC-06", TipoSector.SUPERFICIE, EstadoSector.OPERATIVO);
 
+        Subsistema soporteHangares = new Subsistema("SV-03", "Soporte vital hangares", "SEC-03", TipoSubsistema.SOPORTE_VITAL, EstadoSubsistema.OPERATIVO);
+        hangares.agregarSubsistema(soporteHangares);
+        Sensor oxigeno = new Sensor(1, "SV-03", TipoSensor.OXIGENO, 19.5, 23.5);
+        soporteHangares.agregarSensor(oxigeno);
+
+        Oficial tarkin = new Oficial("OF-01", "Wilhuff Tarkin", RangoOficial.GRAN_MOFF, "SEC-01");
+
+        soporteHangares.setEstadoSubsistema(EstadoSubsistema.DEGRADADO);
         log.info("Simulación finalizada");
     }
 }
