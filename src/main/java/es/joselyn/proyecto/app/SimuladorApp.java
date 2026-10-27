@@ -18,6 +18,7 @@ public class SimuladorApp {
 
         log.info("Simulación iniciada: {}", NOMBRE_ESTACION);
 
+        EstacionImperial estacionImperial = new EstacionImperial(NOMBRE_ESTACION);
         Sector mando = new Sector("SEC-01", TipoSector.MANDO, EstadoSector.OPERATIVO);
         Sector detencion = new Sector("SEC-02", TipoSector.DETENCION, EstadoSector.OPERATIVO);
         Sector hangares = new Sector("SEC-03", TipoSector.HANGARES, EstadoSector.OPERATIVO);
@@ -25,14 +26,24 @@ public class SimuladorApp {
         Sector residuos = new Sector("SEC-05", TipoSector.RESIDUOS, EstadoSector.OPERATIVO);
         Sector superficie = new Sector("SEC-06", TipoSector.SUPERFICIE, EstadoSector.OPERATIVO);
 
+        estacionImperial.agregarSector(mando);
+        estacionImperial.agregarSector(detencion);
+        estacionImperial.agregarSector(hangares);
+        estacionImperial.agregarSector(nucleo);
+        estacionImperial.agregarSector(residuos);
+        estacionImperial.agregarSector(superficie);
+
         Subsistema soporteHangares = new Subsistema("SV-03", "Soporte vital hangares", "SEC-03", TipoSubsistema.SOPORTE_VITAL, EstadoSubsistema.OPERATIVO);
         hangares.agregarSubsistema(soporteHangares);
         Sensor oxigeno = new Sensor(1, "SV-03", TipoSensor.OXIGENO, 19.5, 23.5);
         soporteHangares.agregarSensor(oxigeno);
 
         Oficial tarkin = new Oficial("OF-01", "Wilhuff Tarkin", RangoOficial.GRAN_MOFF, "SEC-01");
+        estacionImperial.agregarOficial(tarkin);
 
         soporteHangares.setEstadoSubsistema(EstadoSubsistema.DEGRADADO);
+        log.info("Estación montada: {}", estacionImperial);
         log.info("Simulación finalizada");
+
     }
 }
