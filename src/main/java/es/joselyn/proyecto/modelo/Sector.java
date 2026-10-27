@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Sector {
 
@@ -58,5 +59,17 @@ public class Sector {
     @Override
     public String toString() {
         return "Sector[" + idSector + ", " + tipoSector + "]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Sector sector = (Sector) o;
+        return Objects.equals(idSector, sector.idSector);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(idSector);
     }
 }
