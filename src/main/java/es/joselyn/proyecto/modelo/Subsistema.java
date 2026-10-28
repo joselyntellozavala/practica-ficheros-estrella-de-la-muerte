@@ -38,16 +38,6 @@ public class Subsistema {
         return idSector;
     }
 
-    //Preguntar sobre la 'cláusula de guarda' (primero descartar lo inválido)
-   /* public void agregarSensor(Sensor sensor) {
-        if (sensor.getIdSubsistema().equals(this.idSubsistema)) {
-            listaSensores.add(sensor);
-            log.debug("Sensor {} añadido a {}", sensor.getIdSensor(), idSubsistema);
-        } else {
-            throw new IllegalArgumentException("El sensor " + sensor.getIdSensor() + " pertenece a " + sensor.getIdSubsistema() + ", no se puede añadir a " + idSubsistema);
-        }
-    } */
-
     public void agregarSensor(Sensor sensor) {
         if (!sensor.getIdSubsistema().equals(idSubsistema)) {
             throw new IllegalArgumentException("El sensor " + sensor.getIdSensor() + " pertenece a " + sensor.getIdSubsistema() + ", no se puede añadir a " + idSubsistema);
