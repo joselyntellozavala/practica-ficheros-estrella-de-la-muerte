@@ -20,7 +20,7 @@ public class EstacionImperial {
         this.listaSectores = new ArrayList<>();
         this.listaOficiales = new ArrayList<>();
 
-        log.debug("Estación Imperial creada: nombre={}", nombre);
+        log.info("Estación Imperial creada: nombre={}", nombre);
     }
 
     public String getNombre() {
@@ -32,7 +32,7 @@ public class EstacionImperial {
             throw new IllegalArgumentException("El sector " + sector.getIdSector() + " ya existe en la estación");
         }
         listaSectores.add(sector);
-        log.debug("Sector {} añadido a la estación", sector.getIdSector());
+        log.info("Sector {} añadido a la estación", sector.getIdSector());
     }
 
     public void agregarOficial(Oficial oficial) {
@@ -50,7 +50,7 @@ public class EstacionImperial {
             throw new IllegalArgumentException("El sector " + oficial.getIdSector() + " no existe");
         }
         listaOficiales.add(oficial);
-        log.debug("Oficial {} añadido a la estación en {}", oficial.getIdOficial(), oficial.getIdSector());
+        log.info("Oficial {} añadido a la estación en {}", oficial.getIdOficial(), oficial.getIdSector());
     }
 
     public List<Sector> getListaSectores() {

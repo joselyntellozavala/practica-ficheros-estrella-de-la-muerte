@@ -29,7 +29,7 @@ public class FicheroLectura {
         }
         this.ruta = ruta;
         this.numeroSensores = numeroSensores;
-        log.debug("Fichero de mediciones preparado: {} con {} sensores", ruta, numeroSensores);
+        log.info("Fichero de mediciones preparado: {} con {} sensores", ruta, numeroSensores);
     }
 
     public void guardarLectura(Lectura lectura) throws IOException {
@@ -40,7 +40,7 @@ public class FicheroLectura {
             }
             randomAccessFile.seek(posicionEsperada);
             escribirRegistro(randomAccessFile, lectura);
-            log.trace("Lectura guardada: ciclo={}, sensor={}, posición={}", lectura.ciclo(), lectura.idSensor(), posicionEsperada);
+            log.debug("Lectura guardada: ciclo={}, sensor={}, posición={}", lectura.ciclo(), lectura.idSensor(), posicionEsperada);
         }
     }
 
@@ -55,7 +55,7 @@ public class FicheroLectura {
             randomAccessFile.seek(posicionBuscada);
             lectura = leerRegistro(randomAccessFile);
         }
-        log.trace("Lectura obtenida: ciclo={}, sensor={}, posicion={}, estado={}", ciclo, idSensor, posicionBuscada, lectura.estado());
+        log.info("Lectura obtenida: ciclo={}, sensor={}, posicion={}, estado={}", ciclo, idSensor, posicionBuscada, lectura.estado());
         return lectura;
     }
 
@@ -72,7 +72,7 @@ public class FicheroLectura {
             randomAccessFile.seek(posicionDeseada + DESPLAZAMIENTO_ESTADO);
             randomAccessFile.writeInt(estadoLectura.getCodigo());
         }
-        log.debug("Estado de lectura cambiado: ciclo={}, sensor={}, estado={}", ciclo, idSensor, estadoLectura);
+        log.info("Estado de lectura cambiado: ciclo={}, sensor={}, estado={}, posicion={}", ciclo, idSensor, estadoLectura, posicionDeseada);
     }
 
     public long contarRegistros() throws IOException {

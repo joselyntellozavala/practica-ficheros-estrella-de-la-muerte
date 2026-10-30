@@ -23,7 +23,7 @@ public class Subsistema {
         this.tipoSubsistema = tipoSubsistema;
         this.estadoSubsistema = estadoSubsistema;
 
-        log.debug("Subsistema creado: id={}, nombre={}, sector={}, tipo={}, estado={}", idSubsistema, nombre, idSector, tipoSubsistema, estadoSubsistema);
+        log.info("Subsistema creado: id={}, nombre={}, sector={}, tipo={}, estado={}", idSubsistema, nombre, idSector, tipoSubsistema, estadoSubsistema);
     }
 
     public String getIdSubsistema() {
@@ -43,7 +43,7 @@ public class Subsistema {
             throw new IllegalArgumentException("El sensor " + sensor.getIdSensor() + " pertenece a " + sensor.getIdSubsistema() + ", no se puede añadir a " + idSubsistema);
         }
         listaSensores.add(sensor);
-        log.debug("Sensor {} añadido a {}", sensor.getIdSensor(), idSubsistema);
+        log.info("Sensor {} añadido a {}", sensor.getIdSensor(), idSubsistema);
     }
 
     public List<Sensor> getListaSensores() {
@@ -61,7 +61,7 @@ public class Subsistema {
     public void setEstadoSubsistema(EstadoSubsistema nuevoEstado) {
         EstadoSubsistema estadoAnterior = this.estadoSubsistema;
         this.estadoSubsistema = nuevoEstado;
-        log.debug("Subsistema {} cambia de estado: {} -> {}", idSubsistema, estadoAnterior, nuevoEstado);
+        log.info("Subsistema {} cambia de estado: {} -> {}", idSubsistema, estadoAnterior, nuevoEstado);
     }
 
     @Override

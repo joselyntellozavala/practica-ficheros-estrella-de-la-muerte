@@ -30,7 +30,7 @@ public class Sensor {
         this.minimoNormal = minimoNormal;
         this.maximoNormal = maximoNormal;
 
-        log.debug("Sensor creado: id={}, subsistema={}, tipo={}, rango=[{}, {}] {}",
+        log.info("Sensor creado: id={}, subsistema={}, tipo={}, rango=[{}, {}] {}",
                 idSensor, idSubsistema, tipo, minimoNormal, maximoNormal, tipo.getUnidad());
     }
 

@@ -20,7 +20,7 @@ public class Oficial {
         this.rango = rango;
         this.idSector = idSector;
 
-        log.debug("Oficial creado: id={}, nombre={}, rango={}, sector={}", idOficial, nombre, rango, idSector);
+        log.info("Oficial creado: id={}, nombre={}, rango={}, sector={}", idOficial, nombre, rango, idSector);
 
     }
 

@@ -22,7 +22,7 @@ public class Sector {
         this.estadoSector = estadoSector;
         this.listaSubsistemas = new ArrayList<>();
 
-        log.debug("Sector creado: id={}, tipo={}, estado={}", idSector, tipoSector, estadoSector);
+        log.info("Sector creado: id={}, tipo={}, estado={}", idSector, tipoSector, estadoSector);
     }
 
     public String getIdSector() {
@@ -41,7 +41,7 @@ public class Sector {
         EstadoSector anterior = this.estadoSector;
         this.estadoSector = nuevoEstado;
 
-        log.debug("Sector {} cambia de estado: {} -> {}", idSector, anterior, nuevoEstado);
+        log.info("Sector {} cambia de estado: {} -> {}", idSector, anterior, nuevoEstado);
     }
 
     public void agregarSubsistema(Subsistema subsistema) {
@@ -49,7 +49,7 @@ public class Sector {
             throw new IllegalArgumentException("El subsistema " + subsistema.getIdSubsistema() + " pertenece a " + subsistema.getIdSector() + ", no se puede añadir a " + idSector);
         }
         listaSubsistemas.add(subsistema);
-        log.debug("Subsistema {} añadido a {}", subsistema.getIdSubsistema(), idSector);
+        log.info("Subsistema {} añadido a {}", subsistema.getIdSubsistema(), idSector);
     }
 
     public List<Subsistema> getListaSubsistemas() {
