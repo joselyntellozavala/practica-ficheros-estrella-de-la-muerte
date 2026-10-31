@@ -5,7 +5,9 @@ public enum TipoSensor {
     TEMPERATURA("K"),
     OXIGENO("%"),
     PRESION("kPa"),
-    POTENCIA("MW");
+    POTENCIA("MW"),
+    CELDAS_ABIERTAS("personas"),
+    SUJETOS_DETECTADOS("sujetos");
 
     private final String unidad;
 
