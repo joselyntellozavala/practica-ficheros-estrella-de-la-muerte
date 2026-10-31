@@ -41,7 +41,7 @@ public class SimuladorApp {
         Oficial tarkin = new Oficial("OF-01", "Wilhuff Tarkin", RangoOficial.GRAN_MOFF, "SEC-01");
         estacionImperial.agregarOficial(tarkin);
 
-        soporteHangares.setEstadoSubsistema(EstadoSubsistema.DEGRADADO);
+        soporteHangares.cambiarEstadoSubsistema(EstadoSubsistema.DEGRADADO, 1);
         log.info("Estación montada: {}", estacionImperial);
         log.info("Simulación finalizada");
 

@@ -14,6 +14,7 @@ public class Subsistema {
     private final List<Sensor> listaSensores;
     private final TipoSubsistema tipoSubsistema;
     private EstadoSubsistema estadoSubsistema;
+    private int cicloUltimoCambio;
 
     public Subsistema(String idSubsistema, String nombre, String idSector, TipoSubsistema tipoSubsistema, EstadoSubsistema estadoSubsistema) {
         this.idSubsistema = idSubsistema;
@@ -58,10 +59,18 @@ public class Subsistema {
         return estadoSubsistema;
     }
 
-    public void setEstadoSubsistema(EstadoSubsistema nuevoEstado) {
+    public void cambiarEstadoSubsistema(EstadoSubsistema nuevoEstado, int ciclo) {
+        if (ciclo < 1) {
+            throw new IllegalArgumentException("El valor de: " + ciclo + " para el ciclo no es válido");
+        }
         EstadoSubsistema estadoAnterior = this.estadoSubsistema;
         this.estadoSubsistema = nuevoEstado;
-        log.info("Subsistema {} cambia de estado: {} -> {}", idSubsistema, estadoAnterior, nuevoEstado);
+        cicloUltimoCambio = ciclo;
+        log.info("Subsistema {} cambia de estado en el ciclo {}: {} -> {}", idSubsistema, ciclo, estadoAnterior, nuevoEstado);
+    }
+
+    public int getCicloUltimoCambio() {
+        return cicloUltimoCambio;
     }
 
     @Override
