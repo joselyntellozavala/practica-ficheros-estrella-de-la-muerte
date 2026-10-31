@@ -1,8 +1,13 @@
 package es.joselyn.proyecto.app;
 
 import es.joselyn.proyecto.modelo.*;
+import es.joselyn.proyecto.persistencia.xml.EscritorEstacionXml;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class SimuladorApp {
 
@@ -43,6 +48,15 @@ public class SimuladorApp {
 
         soporteHangares.cambiarEstadoSubsistema(EstadoSubsistema.DEGRADADO, 1);
         log.info("Estación montada: {}", estacionImperial);
+        log.info("Simulación finalizada");
+
+        try {
+            Files.createDirectories(Path.of("datos"));
+            EscritorEstacionXml escritorXml = new EscritorEstacionXml(Path.of("datos", "estructura_estacion.xml"));
+            escritorXml.crearDocumento(estacionImperial);
+        } catch (IOException e) {
+            log.error("No se pudo escribir el XML de la estación", e);
+        }
         log.info("Simulación finalizada");
 
     }
