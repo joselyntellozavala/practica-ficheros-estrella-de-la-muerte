@@ -46,14 +46,15 @@ public class SimuladorApp {
         Oficial tarkin = new Oficial("OF-01", "Wilhuff Tarkin", RangoOficial.GRAN_MOFF, "SEC-01");
         estacionImperial.agregarOficial(tarkin);
 
-        soporteHangares.cambiarEstadoSubsistema(EstadoSubsistema.DEGRADADO, 1);
         log.info("Estación montada: {}", estacionImperial);
-        log.info("Simulación finalizada");
 
         try {
             Files.createDirectories(Path.of("datos"));
             EscritorEstacionXml escritorXml = new EscritorEstacionXml(Path.of("datos", "estructura_estacion.xml"));
             escritorXml.crearDocumento(estacionImperial);
+            soporteHangares.cambiarEstadoSubsistema(EstadoSubsistema.DEGRADADO, 1);
+            escritorXml.actualizarSubsistema(soporteHangares);
+            escritorXml.actualizarUltimoCiclo(1);
         } catch (IOException e) {
             log.error("No se pudo escribir el XML de la estación", e);
         }

@@ -9,6 +9,8 @@ import java.nio.file.Path;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -118,6 +120,53 @@ public class EscritorEstacionXml {
             throw new IOException("No se pudo guardar el XML en " + ruta, e);
         }
         log.info("XML guardado en {}", ruta);
+    }
+
+    private Element buscarElementoPorId(String etiqueta, String id) {
+        NodeList nodos = documento.getElementsByTagName(etiqueta);
+        for (int i = 0; i < nodos.getLength(); i++) {
+            Element elemento = (Element) nodos.item(i);
+            if (elemento.getAttribute(EtiquetasXml.ATRIBUTO_ID).equals(id)) {
+                return elemento;
+            }
+        }
+        throw new IllegalArgumentException("La etiqueta " + etiqueta + " y el id " + id + " no existen");
+    }
+
+    public void actualizarSubsistema(Subsistema subsistema) throws IOException {
+        if (documento == null) {
+            throw new IllegalStateException("El documento XML no se ha creado todavía: llama antes a crearDocumento");
+        }
+        Element elemento = buscarElementoPorId(EtiquetasXml.ELEMENTO_SUBSISTEMA, subsistema.getIdSubsistema());
+        elemento.setAttribute(EtiquetasXml.ATRIBUTO_ESTADO, subsistema.getEstadoSubsistema().name());
+        if (subsistema.getCicloUltimoCambio() != 0) {
+            elemento.setAttribute(EtiquetasXml.ATRIBUTO_CICLO_ULTIMO_CAMBIO, String.valueOf(subsistema.getCicloUltimoCambio()));
+        }
+        log.info("Subsistema actualizado: id={}, estado={}, ciclo={}", subsistema.getIdSubsistema(), subsistema.getEstadoSubsistema(), subsistema.getCicloUltimoCambio());
+        guardar();
+    }
+
+    public void actualizarSector(Sector sector) throws IOException {
+        if (documento == null) {
+            throw new IllegalStateException("El documento XML no se ha creado todavía: llama antes a crearDocumento");
+        }
+        Element elemento = buscarElementoPorId(EtiquetasXml.ELEMENTO_SECTOR, sector.getIdSector());
+        elemento.setAttribute(EtiquetasXml.ATRIBUTO_ESTADO, sector.getEstadoSector().name());
+        log.info("Sector actualizado: id={}, estado={}", sector.getIdSector(), sector.getEstadoSector());
+        guardar();
+    }
+
+    public void actualizarUltimoCiclo(int ciclo) throws IOException {
+        if (documento == null) {
+            throw new IllegalStateException("El documento XML no se ha creado todavía: llama antes a crearDocumento");
+        }
+        if (ciclo < 1) {
+            throw new IllegalArgumentException("Ciclo no válido: " + ciclo + ". Debe ser mayor o igual que 1");
+        }
+        Element elemento = documento.getDocumentElement();
+        elemento.setAttribute(EtiquetasXml.ATRIBUTO_ULTIMO_CICLO, String.valueOf(ciclo));
+        log.info("Último ciclo actualizado: {}", ciclo);
+        guardar();
     }
 
 }
