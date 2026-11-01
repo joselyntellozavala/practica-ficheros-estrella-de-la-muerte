@@ -87,7 +87,7 @@ public class FicheroLectura {
         return total;
     }
 
-    public List<Lectura> obtenerTodas() throws IOException {
+    public List<Lectura> obtenerTodasLecturas() throws IOException {
         long totalLecturas = contarRegistros();
         List<Lectura> listaLecturas = new ArrayList<>();
         try (RandomAccessFile randomAccessFile = new RandomAccessFile(ruta.toFile(), "r")) {
