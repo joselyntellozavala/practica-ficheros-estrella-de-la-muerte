@@ -1,0 +1,37 @@
+2026-11-02 17:02:05.653 INFO  [main] EstacionImperial - Oficial OF-02 añadido a la estación en SEC-01
+2026-11-02 17:02:05.667 INFO  [main] Oficial - Oficial creado: id=OF-03, nombre=Wullf Yularen, rango=CORONEL, sector=SEC-02
+2026-11-02 17:02:05.667 INFO  [main] EstacionImperial - Oficial OF-03 añadido a la estación en SEC-02
+2026-11-02 17:02:05.668 INFO  [main] Oficial - Oficial creado: id=OF-04, nombre=Pell Darrow, rango=TENIENTE, sector=SEC-02
+2026-11-02 17:02:05.668 INFO  [main] EstacionImperial - Oficial OF-04 añadido a la estación en SEC-02
+2026-11-02 17:02:05.668 INFO  [main] Oficial - Oficial creado: id=OF-05, nombre=Varek Thrane, rango=COMANDANTE, sector=SEC-03
+2026-11-02 17:02:05.669 INFO  [main] EstacionImperial - Oficial OF-05 añadido a la estación en SEC-03
+2026-11-02 17:02:05.669 INFO  [main] Oficial - Oficial creado: id=OF-06, nombre=Lis Kesh, rango=ALFEREZ, sector=SEC-03
+2026-11-02 17:02:05.670 INFO  [main] EstacionImperial - Oficial OF-06 añadido a la estación en SEC-03
+2026-11-02 17:02:05.670 INFO  [main] Oficial - Oficial creado: id=OF-07, nombre=Cassio Tagge, rango=GENERAL, sector=SEC-04
+2026-11-02 17:02:05.670 INFO  [main] EstacionImperial - Oficial OF-07 añadido a la estación en SEC-04
+2026-11-02 17:02:05.671 INFO  [main] Oficial - Oficial creado: id=OF-08, nombre=Orrin Vael, rango=MAYOR, sector=SEC-05
+2026-11-02 17:02:05.671 INFO  [main] EstacionImperial - Oficial OF-08 añadido a la estación en SEC-05
+2026-11-02 17:02:05.671 INFO  [main] Oficial - Oficial creado: id=OF-09, nombre=Dax Morrell, rango=CAPITAN, sector=SEC-06
+2026-11-02 17:02:05.671 INFO  [main] EstacionImperial - Oficial OF-09 añadido a la estación en SEC-06
+2026-11-02 17:02:05.672 INFO  [main] LectorEstacionXml - XML leído: 6 sectores, 9 oficiales, último ciclo 6
+2026-11-02 17:02:05.673 INFO  [main] FicheroLectura - Fichero de mediciones preparado: datos\lecturas.bin con 12 sensores
+2026-11-02 17:02:05.676 DEBUG [main] FicheroLectura - Lista de lecturas creada. Total: 72 lecturas
+2026-11-02 17:02:05.677 INFO  [main] FicheroHistorico - Fichero histórico de la estación creado en: datos\historico_operaciones.txt
+2026-11-02 17:02:05.685 INFO  [main] FicheroHistorico - Total de operaciones: 14
+2026-11-02 17:02:05.686 INFO  [main] AnalizadorForense - Datos leídos: 72 lecturas, 14 operaciones, 6 ciclos
+2026-11-02 17:02:05.686 WARN  [main] AnalizadorForense - 3 lecturas anómalas encontradas en el binario
+2026-11-02 17:02:05.688 DEBUG [main] AnalizadorForense - Sensor 2 (RT-01) anómalo entre los ciclos 4 y 6
+2026-11-02 17:02:05.691 DEBUG [main] AnalizadorForense - Regla aplicada: RAYO_TRACTOR por debajo del mínimo → candidato DESACTIVACION_RAYO_TRACTOR
+2026-11-02 17:02:05.732 DEBUG [main] AnalizadorForense - El histórico corrobora DESACTIVACION_RAYO_TRACTOR: Operacion[fechaHora=2026-11-02T17:31:26, ciclo=4, sector=SEC-04, subsistema=RT-01, credencial=SIN-IDENTIFICAR, tipo=ACCESO, mensaje=Acceso a terminal del núcleo sin orden registrada]
+2026-11-02 17:02:05.738 INFO  [main] AnalizadorForense - Veredicto: DESACTIVACION_RAYO_TRACTOR (BIN, XML y TXT coinciden en RT-01 entre los ciclos 4 y 6)
+2026-11-02 17:02:05.759 INFO  [main] EscritorInforme - Escritor del informe creado en: salida\informe_forense.txt
+2026-11-02 17:02:05.761 INFO  [main] EscritorInforme - Informe escrito en salida\informe_forense.txt (veredicto IDENTIFICADO)
+2026-11-02 17:02:05.762 INFO  [main] EscritorLecturasAnomalas - Escritor de lecturas anómalas creado en: salida\lecturas_anomalas.bin
+2026-11-02 17:02:05.763 DEBUG [main] EscritorLecturasAnomalas - Lectura anómala copiada: ciclo=4, sensor=2, valor=0.0
+2026-11-02 17:02:05.763 DEBUG [main] EscritorLecturasAnomalas - Lectura anómala copiada: ciclo=5, sensor=2, valor=0.0
+2026-11-02 17:02:05.763 DEBUG [main] EscritorLecturasAnomalas - Lectura anómala copiada: ciclo=6, sensor=2, valor=0.0
+2026-11-02 17:02:05.765 INFO  [main] EscritorLecturasAnomalas - 3 lecturas anómalas escritas en salida\lecturas_anomalas.bin
+2026-11-02 17:02:05.766 INFO  [main] EscritorAnalisisXml - Escritor del XML de análisis creado en: salida\elementos_afectados.xml
+2026-11-02 17:02:05.840 INFO  [main] EscritorAnalisisXml - XML de análisis escrito en salida\elementos_afectados.xml (veredicto IDENTIFICADO)
+2026-11-02 17:02:05.841 INFO  [main] AnalizadorApp - Análisis completado: IDENTIFICADO. Salidas en C:\Users\josel\Desktop\PROYECTO UD1\estrella-de-la-muerte\salida
+2026-11-02 17:02:05.842 INFO  [main] AnalizadorApp - Analizador finalizado

@@ -1,0 +1,104 @@
+2026-11-02 13:41:27.915 INFO  [main] AnalizadorApp - Analizador forense iniciado
+2026-11-02 13:41:27.923 INFO  [main] AnalizadorForense - Analizador forense creado para la carpeta datos
+2026-11-02 13:41:27.924 INFO  [main] LectorEstacionXml - Lector de la estación creado para: datos\estructura_estacion.xml
+2026-11-02 13:41:27.929 INFO  [main] EstacionImperial - Estación Imperial creada: nombre=Estrella de la muerte
+2026-11-02 13:41:27.931 INFO  [main] Sector - Sector creado: id=SEC-01, tipo=MANDO, estado=OPERATIVO
+2026-11-02 13:41:27.931 INFO  [main] EstacionImperial - Sector SEC-01 añadido a la estación
+2026-11-02 13:41:27.935 INFO  [main] Subsistema - Subsistema creado: id=SV-01, nombre=Soporte vital mando, sector=SEC-01, tipo=SOPORTE_VITAL, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.935 INFO  [main] Sector - Subsistema SV-01 añadido a SEC-01
+2026-11-02 13:41:27.938 INFO  [main] Sensor - Sensor creado: id=7, subsistema=SV-01, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 13:41:27.938 INFO  [main] Subsistema - Sensor 7 añadido a SV-01
+2026-11-02 13:41:27.938 INFO  [main] Sector - Sector creado: id=SEC-02, tipo=DETENCION, estado=OPERATIVO
+2026-11-02 13:41:27.939 INFO  [main] EstacionImperial - Sector SEC-02 añadido a la estación
+2026-11-02 13:41:27.939 INFO  [main] Subsistema - Subsistema creado: id=AA-23, nombre=Bloque de detención AA-23, sector=SEC-02, tipo=BLOQUE_DETENCION, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.939 INFO  [main] Sector - Subsistema AA-23 añadido a SEC-02
+2026-11-02 13:41:27.939 INFO  [main] Sensor - Sensor creado: id=3, subsistema=AA-23, tipo=CELDAS_ABIERTAS, rango=[0.0, 0.0] celdas
+2026-11-02 13:41:27.939 INFO  [main] Subsistema - Sensor 3 añadido a AA-23
+2026-11-02 13:41:27.940 INFO  [main] Subsistema - Subsistema creado: id=SV-02, nombre=Soporte vital detención, sector=SEC-02, tipo=SOPORTE_VITAL, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.940 INFO  [main] Sector - Subsistema SV-02 añadido a SEC-02
+2026-11-02 13:41:27.940 INFO  [main] Sensor - Sensor creado: id=8, subsistema=SV-02, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 13:41:27.941 INFO  [main] Subsistema - Sensor 8 añadido a SV-02
+2026-11-02 13:41:27.941 INFO  [main] Sector - Sector creado: id=SEC-03, tipo=HANGARES, estado=ALERTA
+2026-11-02 13:41:27.941 INFO  [main] EstacionImperial - Sector SEC-03 añadido a la estación
+2026-11-02 13:41:27.942 INFO  [main] Subsistema - Subsistema creado: id=HG-327, nombre=Hangar 327, sector=SEC-03, tipo=HANGAR, estado=DEGRADADO, cicloUltimoCambio=8
+2026-11-02 13:41:27.942 INFO  [main] Sector - Subsistema HG-327 añadido a SEC-03
+2026-11-02 13:41:27.942 INFO  [main] Sensor - Sensor creado: id=4, subsistema=HG-327, tipo=SUJETOS_DETECTADOS, rango=[0.0, 6.0] sujetos
+2026-11-02 13:41:27.942 INFO  [main] Subsistema - Sensor 4 añadido a HG-327
+2026-11-02 13:41:27.943 INFO  [main] Subsistema - Subsistema creado: id=SV-03, nombre=Soporte vital hangares, sector=SEC-03, tipo=SOPORTE_VITAL, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.943 INFO  [main] Sector - Subsistema SV-03 añadido a SEC-03
+2026-11-02 13:41:27.943 INFO  [main] Sensor - Sensor creado: id=9, subsistema=SV-03, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 13:41:27.944 INFO  [main] Subsistema - Sensor 9 añadido a SV-03
+2026-11-02 13:41:27.944 INFO  [main] Sector - Sector creado: id=SEC-04, tipo=NUCLEO, estado=OPERATIVO
+2026-11-02 13:41:27.944 INFO  [main] EstacionImperial - Sector SEC-04 añadido a la estación
+2026-11-02 13:41:27.945 INFO  [main] Subsistema - Subsistema creado: id=RX-01, nombre=Reactor principal, sector=SEC-04, tipo=REACTOR, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.945 INFO  [main] Sector - Subsistema RX-01 añadido a SEC-04
+2026-11-02 13:41:27.945 INFO  [main] Sensor - Sensor creado: id=1, subsistema=RX-01, tipo=POTENCIA, rango=[800.0, 1200.0] MW
+2026-11-02 13:41:27.946 INFO  [main] Subsistema - Sensor 1 añadido a RX-01
+2026-11-02 13:41:27.946 INFO  [main] Subsistema - Subsistema creado: id=RT-01, nombre=Rayo tractor, sector=SEC-04, tipo=RAYO_TRACTOR, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.946 INFO  [main] Sector - Subsistema RT-01 añadido a SEC-04
+2026-11-02 13:41:27.946 INFO  [main] Sensor - Sensor creado: id=2, subsistema=RT-01, tipo=POTENCIA, rango=[40.0, 60.0] MW
+2026-11-02 13:41:27.947 INFO  [main] Subsistema - Sensor 2 añadido a RT-01
+2026-11-02 13:41:27.947 INFO  [main] Subsistema - Subsistema creado: id=SV-04, nombre=Soporte vital núcleo, sector=SEC-04, tipo=SOPORTE_VITAL, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.947 INFO  [main] Sector - Subsistema SV-04 añadido a SEC-04
+2026-11-02 13:41:27.948 INFO  [main] Sensor - Sensor creado: id=10, subsistema=SV-04, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 13:41:27.948 INFO  [main] Subsistema - Sensor 10 añadido a SV-04
+2026-11-02 13:41:27.948 INFO  [main] Sector - Sector creado: id=SEC-05, tipo=RESIDUOS, estado=OPERATIVO
+2026-11-02 13:41:27.948 INFO  [main] EstacionImperial - Sector SEC-05 añadido a la estación
+2026-11-02 13:41:27.949 INFO  [main] Subsistema - Subsistema creado: id=CP-3263827, nombre=Compactador 3263827, sector=SEC-05, tipo=COMPACTADOR, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.949 INFO  [main] Sector - Subsistema CP-3263827 añadido a SEC-05
+2026-11-02 13:41:27.949 INFO  [main] Sensor - Sensor creado: id=5, subsistema=CP-3263827, tipo=PRESION, rango=[90.0, 110.0] kPa
+2026-11-02 13:41:27.949 INFO  [main] Subsistema - Sensor 5 añadido a CP-3263827
+2026-11-02 13:41:27.950 INFO  [main] Subsistema - Subsistema creado: id=SV-05, nombre=Soporte vital residuos, sector=SEC-05, tipo=SOPORTE_VITAL, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.950 INFO  [main] Sector - Subsistema SV-05 añadido a SEC-05
+2026-11-02 13:41:27.950 INFO  [main] Sensor - Sensor creado: id=11, subsistema=SV-05, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 13:41:27.950 INFO  [main] Subsistema - Sensor 11 añadido a SV-05
+2026-11-02 13:41:27.951 INFO  [main] Sector - Sector creado: id=SEC-06, tipo=SUPERFICIE, estado=OPERATIVO
+2026-11-02 13:41:27.951 INFO  [main] EstacionImperial - Sector SEC-06 añadido a la estación
+2026-11-02 13:41:27.951 INFO  [main] Subsistema - Subsistema creado: id=CT-01, nombre=Conducto térmico de escape, sector=SEC-06, tipo=CONDUCTO_TERMICO, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.951 INFO  [main] Sector - Subsistema CT-01 añadido a SEC-06
+2026-11-02 13:41:27.951 INFO  [main] Sensor - Sensor creado: id=6, subsistema=CT-01, tipo=TEMPERATURA, rango=[300.0, 350.0] K
+2026-11-02 13:41:27.951 INFO  [main] Subsistema - Sensor 6 añadido a CT-01
+2026-11-02 13:41:27.952 INFO  [main] Subsistema - Subsistema creado: id=SV-06, nombre=Soporte vital superficie, sector=SEC-06, tipo=SOPORTE_VITAL, estado=OPERATIVO, cicloUltimoCambio=0
+2026-11-02 13:41:27.952 INFO  [main] Sector - Subsistema SV-06 añadido a SEC-06
+2026-11-02 13:41:27.952 INFO  [main] Sensor - Sensor creado: id=12, subsistema=SV-06, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 13:41:27.952 INFO  [main] Subsistema - Sensor 12 añadido a SV-06
+2026-11-02 13:41:27.954 INFO  [main] Oficial - Oficial creado: id=OF-01, nombre=Wilhuff Tarkin, rango=GRAN_MOFF, sector=SEC-01
+2026-11-02 13:41:27.954 INFO  [main] EstacionImperial - Oficial OF-01 añadido a la estación en SEC-01
+2026-11-02 13:41:27.954 INFO  [main] Oficial - Oficial creado: id=OF-02, nombre=Conan Antonio Motti, rango=ALMIRANTE, sector=SEC-01
+2026-11-02 13:41:27.954 INFO  [main] EstacionImperial - Oficial OF-02 añadido a la estación en SEC-01
+2026-11-02 13:41:27.955 INFO  [main] Oficial - Oficial creado: id=OF-03, nombre=Wullf Yularen, rango=CORONEL, sector=SEC-02
+2026-11-02 13:41:27.955 INFO  [main] EstacionImperial - Oficial OF-03 añadido a la estación en SEC-02
+2026-11-02 13:41:27.955 INFO  [main] Oficial - Oficial creado: id=OF-04, nombre=Pell Darrow, rango=TENIENTE, sector=SEC-02
+2026-11-02 13:41:27.955 INFO  [main] EstacionImperial - Oficial OF-04 añadido a la estación en SEC-02
+2026-11-02 13:41:27.955 INFO  [main] Oficial - Oficial creado: id=OF-05, nombre=Varek Thrane, rango=COMANDANTE, sector=SEC-03
+2026-11-02 13:41:27.955 INFO  [main] EstacionImperial - Oficial OF-05 añadido a la estación en SEC-03
+2026-11-02 13:41:27.956 INFO  [main] Oficial - Oficial creado: id=OF-06, nombre=Lis Kesh, rango=ALFEREZ, sector=SEC-03
+2026-11-02 13:41:27.956 INFO  [main] EstacionImperial - Oficial OF-06 añadido a la estación en SEC-03
+2026-11-02 13:41:27.956 INFO  [main] Oficial - Oficial creado: id=OF-07, nombre=Cassio Tagge, rango=GENERAL, sector=SEC-04
+2026-11-02 13:41:27.956 INFO  [main] EstacionImperial - Oficial OF-07 añadido a la estación en SEC-04
+2026-11-02 13:41:27.956 INFO  [main] Oficial - Oficial creado: id=OF-08, nombre=Orrin Vael, rango=MAYOR, sector=SEC-05
+2026-11-02 13:41:27.956 INFO  [main] EstacionImperial - Oficial OF-08 añadido a la estación en SEC-05
+2026-11-02 13:41:27.956 INFO  [main] Oficial - Oficial creado: id=OF-09, nombre=Dax Morrell, rango=CAPITAN, sector=SEC-06
+2026-11-02 13:41:27.956 INFO  [main] EstacionImperial - Oficial OF-09 añadido a la estación en SEC-06
+2026-11-02 13:41:27.957 INFO  [main] LectorEstacionXml - XML leído: 6 sectores, 9 oficiales, último ciclo 8
+2026-11-02 13:41:27.958 INFO  [main] FicheroLectura - Fichero de mediciones preparado: datos\lecturas.bin con 12 sensores
+2026-11-02 13:41:27.968 DEBUG [main] FicheroLectura - Lista de lecturas creada. Total: 96 lecturas
+2026-11-02 13:41:27.970 INFO  [main] FicheroHistorico - Fichero histórico de la estación creado en: datos\historico_operaciones.txt
+2026-11-02 13:41:27.976 INFO  [main] FicheroHistorico - Total de operaciones: 18
+2026-11-02 13:41:27.977 INFO  [main] AnalizadorForense - Datos leídos: 96 lecturas, 18 operaciones, 8 ciclos
+2026-11-02 13:41:27.977 WARN  [main] AnalizadorForense - 3 lecturas anómalas encontradas en el binario
+2026-11-02 13:41:27.980 DEBUG [main] AnalizadorForense - Sensor 4 (HG-327) anómalo entre los ciclos 6 y 8
+2026-11-02 13:41:27.981 DEBUG [main] AnalizadorForense - Regla aplicada: HANGAR por encima del máximo → candidato INTRUSION_HANGAR
+2026-11-02 13:41:28.000 DEBUG [main] AnalizadorForense - El histórico corrobora INTRUSION_HANGAR: Operacion[fechaHora=2026-11-02T14:30:53, ciclo=6, sector=SEC-03, subsistema=HG-327, credencial=TK-421, tipo=ACCESO, mensaje=Acceso al hangar 327]
+2026-11-02 13:41:28.003 INFO  [main] AnalizadorForense - Veredicto: INTRUSION_HANGAR (BIN, XML y TXT coinciden en HG-327 entre los ciclos 6 y 8)
+2026-11-02 13:41:28.015 INFO  [main] EscritorInforme - Escritor del informe creado en: salida\informe_forense.txt
+2026-11-02 13:41:28.016 INFO  [main] EscritorInforme - Informe escrito en salida\informe_forense.txt (veredicto IDENTIFICADO)
+2026-11-02 13:41:28.017 INFO  [main] EscritorLecturasAnomalas - Escritor de lecturas anómalas creado en: salida\lecturas_anomalas.bin
+2026-11-02 13:41:28.018 DEBUG [main] EscritorLecturasAnomalas - Lectura anómala copiada: ciclo=6, sensor=4, valor=10.0
+2026-11-02 13:41:28.018 DEBUG [main] EscritorLecturasAnomalas - Lectura anómala copiada: ciclo=7, sensor=4, valor=10.0
+2026-11-02 13:41:28.019 DEBUG [main] EscritorLecturasAnomalas - Lectura anómala copiada: ciclo=8, sensor=4, valor=10.0
+2026-11-02 13:41:28.019 INFO  [main] EscritorLecturasAnomalas - 3 lecturas anómalas escritas en salida\lecturas_anomalas.bin
+2026-11-02 13:41:28.020 INFO  [main] EscritorAnalisisXml - Escritor del XML de análisis creado en: salida\elementos_afectados.xml
+2026-11-02 13:41:28.069 INFO  [main] EscritorAnalisisXml - XML de análisis escrito en salida\elementos_afectados.xml (veredicto IDENTIFICADO)
+2026-11-02 13:41:28.070 INFO  [main] AnalizadorApp - Análisis completado: IDENTIFICADO. Salidas en C:\Users\josel\Desktop\PROYECTO UD1\estrella-de-la-muerte\salida
+2026-11-02 13:41:28.070 INFO  [main] AnalizadorApp - Analizador finalizado

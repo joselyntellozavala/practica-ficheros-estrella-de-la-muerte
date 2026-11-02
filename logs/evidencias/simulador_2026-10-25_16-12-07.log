@@ -1,0 +1,8 @@
+2026-10-25 16:12:07.792 INFO  [main] SimuladorApp - Simulación iniciada: Estrella de la muerte
+2026-10-25 16:12:07.844 DEBUG [main] Sector - Sector creado: id=SEC-01, tipo=MANDO, estado=OPERATIVO
+2026-10-25 16:12:07.844 DEBUG [main] Sector - Sector creado: id=SEC-02, tipo=DETENCION, estado=OPERATIVO
+2026-10-25 16:12:07.845 DEBUG [main] Sector - Sector creado: id=SEC-03, tipo=HANGARES, estado=OPERATIVO
+2026-10-25 16:12:07.845 DEBUG [main] Sector - Sector creado: id=SEC-04, tipo=NUCLEO, estado=OPERATIVO
+2026-10-25 16:12:07.845 DEBUG [main] Sector - Sector creado: id=SEC-05, tipo=RESIDUOS, estado=OPERATIVO
+2026-10-25 16:12:07.846 DEBUG [main] Sector - Sector creado: id=SEC-06, tipo=SUPERFICIE, estado=OPERATIVO
+2026-10-25 16:12:07.847 INFO  [main] SimuladorApp - Simulación finalizada
