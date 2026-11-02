@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Simulador - Fuga AA-23" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="es.joselyn.proyecto.app.SimuladorApp" />
+    <module name="estrella-de-la-muerte" />
+    <option name="PROGRAM_PARAMETERS" value="FUGA_AA23" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="es.joselyn.proyecto.app.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
