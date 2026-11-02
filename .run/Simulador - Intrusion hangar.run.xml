@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Simulador - Intrusión hangar" type="Application" factoryName="Application">
+  <configuration default="false" name="Simulador - Intrusion hangar" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="es.joselyn.proyecto.app.SimuladorApp" />
     <module name="estrella-de-la-muerte" />
     <option name="PROGRAM_PARAMETERS" value="INTRUSION_HANGAR" />
