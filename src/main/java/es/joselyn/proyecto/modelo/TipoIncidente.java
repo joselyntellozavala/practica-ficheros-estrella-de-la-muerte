@@ -2,7 +2,7 @@ package es.joselyn.proyecto.modelo;
 
 public enum TipoIncidente {
 
-    DESACTIVACION_RAYO_TRACTOR("Desactivación del rayo tractor”"),
+    DESACTIVACION_RAYO_TRACTOR("Desactivación del rayo tractor"),
     FUGA_AA23("Fuga del bloque de detención AA-23"),
     FALLO_SOPORTE_VITAL("Fallo del soporte vital"),
     FALLO_COMPACTADOR("Fallo del compactador de basura"),
