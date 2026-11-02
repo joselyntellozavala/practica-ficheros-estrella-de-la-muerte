@@ -17,6 +17,15 @@ public class Subsistema {
     private int cicloUltimoCambio;
 
     public Subsistema(String idSubsistema, String nombre, String idSector, TipoSubsistema tipoSubsistema, EstadoSubsistema estadoSubsistema) {
+        this(idSubsistema, nombre, idSector, tipoSubsistema, estadoSubsistema, 0);
+    }
+
+    public Subsistema(String idSubsistema, String nombre, String idSector, TipoSubsistema tipoSubsistema,
+                      EstadoSubsistema estadoSubsistema, int cicloUltimoCambio) {
+        if (cicloUltimoCambio < 0) {
+            throw new IllegalArgumentException("El ciclo del último cambio no puede ser negativo: " + cicloUltimoCambio);
+        }
+        this.cicloUltimoCambio = cicloUltimoCambio;
         this.idSubsistema = idSubsistema;
         this.nombre = nombre;
         this.idSector = idSector;
@@ -24,7 +33,7 @@ public class Subsistema {
         this.tipoSubsistema = tipoSubsistema;
         this.estadoSubsistema = estadoSubsistema;
 
-        log.info("Subsistema creado: id={}, nombre={}, sector={}, tipo={}, estado={}", idSubsistema, nombre, idSector, tipoSubsistema, estadoSubsistema);
+        log.info("Subsistema creado: id={}, nombre={}, sector={}, tipo={}, estado={}, cicloUltimoCambio={}", idSubsistema, nombre, idSector, tipoSubsistema, estadoSubsistema, cicloUltimoCambio);
     }
 
     public String getIdSubsistema() {
