@@ -1,0 +1,12 @@
+2026-10-26 03:43:25.805 INFO  [main] SimuladorApp - Simulación iniciada: Estrella de la muerte
+2026-10-26 03:43:25.809 DEBUG [main] Sector - Sector creado: id=SEC-01, tipo=MANDO, estado=OPERATIVO
+2026-10-26 03:43:25.810 DEBUG [main] Sector - Sector creado: id=SEC-02, tipo=DETENCION, estado=OPERATIVO
+2026-10-26 03:43:25.810 DEBUG [main] Sector - Sector creado: id=SEC-03, tipo=HANGARES, estado=OPERATIVO
+2026-10-26 03:43:25.810 DEBUG [main] Sector - Sector creado: id=SEC-04, tipo=NUCLEO, estado=OPERATIVO
+2026-10-26 03:43:25.810 DEBUG [main] Sector - Sector creado: id=SEC-05, tipo=RESIDUOS, estado=OPERATIVO
+2026-10-26 03:43:25.810 DEBUG [main] Sector - Sector creado: id=SEC-06, tipo=SUPERFICIE, estado=OPERATIVO
+2026-10-26 03:43:25.812 DEBUG [main] Subsistema - Subsistema creado: id=SV-03, nombre=Soporte vital hangares, sector=SEC-03, tipo=SOPORTE_VITAL, estado=OPERATIVO
+2026-10-26 03:43:25.813 DEBUG [main] Sensor - Sensor creado: id=1, subsistema=SV-03, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-10-26 03:43:25.813 DEBUG [main] Subsistema - Sensor 1 añadido a SV-03
+2026-10-26 03:43:25.813 DEBUG [main] Subsistema - Subsistema SV-03 cambia de estado: OPERATIVO -> DEGRADADO
+2026-10-26 03:43:25.815 INFO  [main] SimuladorApp - Simulación finalizada

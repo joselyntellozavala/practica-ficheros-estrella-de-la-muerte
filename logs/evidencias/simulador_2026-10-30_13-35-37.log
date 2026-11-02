@@ -1,0 +1,23 @@
+2026-10-30 13:35:37.774 INFO  [main] SimuladorApp - Simulación iniciada: Estrella de la muerte
+2026-10-30 13:35:37.778 INFO  [main] EstacionImperial - Estación Imperial creada: nombre=Estrella de la muerte
+2026-10-30 13:35:37.780 INFO  [main] Sector - Sector creado: id=SEC-01, tipo=MANDO, estado=OPERATIVO
+2026-10-30 13:35:37.780 INFO  [main] Sector - Sector creado: id=SEC-02, tipo=DETENCION, estado=OPERATIVO
+2026-10-30 13:35:37.780 INFO  [main] Sector - Sector creado: id=SEC-03, tipo=HANGARES, estado=OPERATIVO
+2026-10-30 13:35:37.780 INFO  [main] Sector - Sector creado: id=SEC-04, tipo=NUCLEO, estado=OPERATIVO
+2026-10-30 13:35:37.805 INFO  [main] Sector - Sector creado: id=SEC-05, tipo=RESIDUOS, estado=OPERATIVO
+2026-10-30 13:35:37.805 INFO  [main] Sector - Sector creado: id=SEC-06, tipo=SUPERFICIE, estado=OPERATIVO
+2026-10-30 13:35:37.805 INFO  [main] EstacionImperial - Sector SEC-01 añadido a la estación
+2026-10-30 13:35:37.805 INFO  [main] EstacionImperial - Sector SEC-02 añadido a la estación
+2026-10-30 13:35:37.805 INFO  [main] EstacionImperial - Sector SEC-03 añadido a la estación
+2026-10-30 13:35:37.805 INFO  [main] EstacionImperial - Sector SEC-04 añadido a la estación
+2026-10-30 13:35:37.806 INFO  [main] EstacionImperial - Sector SEC-05 añadido a la estación
+2026-10-30 13:35:37.806 INFO  [main] EstacionImperial - Sector SEC-06 añadido a la estación
+2026-10-30 13:35:37.807 INFO  [main] Subsistema - Subsistema creado: id=SV-03, nombre=Soporte vital hangares, sector=SEC-03, tipo=SOPORTE_VITAL, estado=OPERATIVO
+2026-10-30 13:35:37.808 INFO  [main] Sector - Subsistema SV-03 añadido a SEC-03
+2026-10-30 13:35:37.809 INFO  [main] Sensor - Sensor creado: id=1, subsistema=SV-03, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-10-30 13:35:37.809 INFO  [main] Subsistema - Sensor 1 añadido a SV-03
+2026-10-30 13:35:37.811 INFO  [main] Oficial - Oficial creado: id=OF-01, nombre=Wilhuff Tarkin, rango=GRAN_MOFF, sector=SEC-01
+2026-10-30 13:35:37.811 INFO  [main] EstacionImperial - Oficial OF-01 añadido a la estación en SEC-01
+2026-10-30 13:35:37.811 INFO  [main] Subsistema - Subsistema SV-03 cambia de estado: OPERATIVO -> DEGRADADO
+2026-10-30 13:35:37.813 INFO  [main] SimuladorApp - Estación montada: EstacionImperial[Estrella de la muerte, 6 sectores, 1 oficiales]
+2026-10-30 13:35:37.814 INFO  [main] SimuladorApp - Simulación finalizada

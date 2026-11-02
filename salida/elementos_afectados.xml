@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<analisis incidente="DESACTIVACION_RAYO_TRACTOR" ultimoCiclo="6" veredicto="IDENTIFICADO">
+    <sector estado="OPERATIVO" id="SEC-04" tipo="NUCLEO">
+        <subsistema cicloUltimoCambio="6" estado="FUERA_DE_SERVICIO" id="RT-01" nombre="Rayo tractor" tipo="RAYO_TRACTOR">
+            <sensor id="2" maximo="60.0" minimo="40.0" tipo="POTENCIA"/>
+        </subsistema>
+        <oficialAlMando id="OF-07" nombre="Cassio Tagge" rango="GENERAL"/>
+    </sector>
+</analisis>

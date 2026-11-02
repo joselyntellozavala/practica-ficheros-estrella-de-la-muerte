@@ -1,0 +1,15 @@
+# fecha_hora | ciclo | sector | subsistema | credencial | tipo | mensaje
+2026-11-02 17:01:26|1|SEC-01|SV-01|OF-02|MANTENIMIENTO|Revisión programada sin incidencias
+2026-11-02 17:01:26|1|SEC-02|AA-23|OF-04|ACCESO|Acceso autorizado
+2026-11-02 17:11:26|2|SEC-06|SV-06|OF-09|ACCESO|Acceso autorizado
+2026-11-02 17:11:26|2|SEC-01|SV-01|OF-02|ACCESO|Acceso autorizado
+2026-11-02 17:21:26|3|SEC-01|SV-01|OF-01|ORDEN|Orden de rutina emitida
+2026-11-02 17:21:26|3|SEC-01|SV-01|OF-01|ACCESO|Acceso autorizado
+2026-11-02 17:31:26|4|SEC-05|SV-05|OF-08|ORDEN|Orden de rutina emitida
+2026-11-02 17:31:26|4|SEC-02|SV-02|OF-04|RELEVO|Relevo de turno completado
+2026-11-02 17:31:26|4|SEC-04|RT-01|SIN-IDENTIFICAR|ACCESO|Acceso a terminal del núcleo sin orden registrada
+2026-11-02 17:41:26|5|SEC-02|SV-02|OF-04|RELEVO|Relevo de turno completado
+2026-11-02 17:41:26|5|SEC-05|SV-05|OF-08|MANTENIMIENTO|Revisión programada sin incidencias
+2026-11-02 17:51:26|6|SEC-05|SV-05|OF-08|ORDEN|Orden de rutina emitida
+2026-11-02 17:51:26|6|SEC-03|SV-03|OF-05|RELEVO|Relevo de turno completado
+2026-11-02 17:51:26|6|SEC-04|RT-01|SISTEMA|AVISO|Lecturas fuera de rango durante 3 ciclos; subsistema FUERA_DE_SERVICIO, sector OPERATIVO
