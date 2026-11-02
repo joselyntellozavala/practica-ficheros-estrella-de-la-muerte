@@ -150,5 +150,7 @@ FicheroLecturas, EscritorEstacionXml, FicheroHistorico, EtiquetasXml.
 - Comprueba los tres ficheros antes de analizar: si falta alguno, ERROR con todos los que faltan y fin sin salidas.
 - IOException capturada con ERROR y la excepción como causa.
 
-### Pendiente para la fase 5
-- Log4j muestra un aviso interno cuando no está definida la propiedad "programa" (ocurrirá en los tests).
+## Fase 5 — Pruebas y entrega (cerrada)
+- Log4j: propiedad interna renombrada a nombrePrograma; con el mismo nombre que la del sistema entraba en bucle cuando no estaba definida.
+- Tests JUnit 5 con @TempDir y Random con semilla fija (reproducibles): texto, binario (RandomAccessFile), XML (DOM + SAX), excepción, 6 incidentes parametrizados (@EnumSource) e integración simulador → AnalizadorApp → salidas.
+- README.md e IA.md en la raíz. Ejecución final conservada en datos/, salida/ y logs/.
