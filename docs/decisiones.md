@@ -92,3 +92,65 @@ Código listo el lunes 26; revisión hasta el 31; entrega el 2/11 a las 23:59 (h
 
 ### Implementado por adelantado
 FicheroLecturas, EscritorEstacionXml, FicheroHistorico, EtiquetasXml.
+
+## Fase 2-3 — Simulador (cerrada)
+
+### Modelo
+- TipoSensor: campo esRecuento (CELDAS_ABIERTAS y SUJETOS_DETECTADOS); se generan como enteros. Unidad de CELDAS_ABIERTAS: "celdas".
+- TipoIncidente en modelo, con descripción para el informe: es el catálogo de incidentes posibles, no la respuesta. El simulador nunca escribe su nombre en los ficheros.
+  - Nombres de evento, no de dispositivo (DESACTIVACION_RAYO_TRACTOR, FUGA_AA23...), para no chocar con TipoSubsistema.
+- Excepción renombrada a AnomaliaCriticaException: comprobada (extends Exception), con ciclo e id del sensor. Un único constructor.
+  - Una sola para los 6 incidentes: representa la detección, que es genérica.
+
+### Estación
+- Rangos: RX-01 800-1200 MW · RT-01 40-60 MW · AA-23 0-0 · HG-327 0-6 · CP 90-110 kPa · CT-01 300-350 K · SV 19,5-23,5 %.
+- Plantilla de 9 oficiales (OF-01…OF-09), al menos uno por sector y sin rangos repetidos en el mismo sector.
+- Credenciales: OF-XX (oficiales), SISTEMA (avisos automáticos), SIN-IDENTIFICAR (rayo tractor), TK-421 (intrusión, no está en la plantilla).
+
+### Simulación
+- Huella (record en simulacion): sensor, valor anómalo, tipo de operación, credencial, síntoma, estado de subsistema y de sector. Se crea con un switch sin default.
+- Tres modos con métodos de fábrica: normal (incidente sorteado), sinIncidente, conIncidente. Constructor privado.
+- SimuladorApp: sin argumento → normal; SIN_INCIDENTE; o el nombre del incidente. Configuraciones en .run/.
+- Al empezar se borran los tres ficheros: el BIN exige empezar en la posición 0 y el TXT se abre en modo añadir.
+- Incidente entre los ciclos 3 y 6; máximo 10 ciclos; 10 minutos simulados por ciclo; 2 operaciones de rutina por ciclo.
+- Orden de cada ciclo: BIN → TXT → XML (ultimoCiclo) → detección.
+- Detección: lectura fuera de rango → se leen por posición los 2 ciclos anteriores; si los 3 son sospechosos, se marcan ANOMALA (modificar). Usa las tres operaciones de RandomAccessFile.
+- Las consecuencias (XML y AVISO) se escriben antes del throw: en el catch todo está persistido.
+
+### Logs
+- Excepciones capturadas con ERROR y la excepción como causa (sin FATAL)
+
+## Fase 4 — Analizador (cerrada)
+
+### Lectura
+- XML con SAX: LectorEstacionXml + ManejadorEstacionXml (sin public, solo lo usa el lector). Reconstruye EstacionImperial: rangos y número de sensores salen del XML, no del simulador.
+  - El padre se sabe por anidamiento: sectorActual y subsistemaActual se asignan en startElement y se limpian en endElement.
+  - Errores con número de línea (Locator) → SAXParseException → IOException.
+- Subsistema: segundo constructor con cicloUltimoCambio para reconstruir sin un "cambio de estado" falso en el log. El de 5 parámetros delega con this(..., 0).
+- BIN y TXT: se reutilizan FicheroLectura y FicheroHistorico. leerRegistro convierte valores imposibles en IOException con la posición del registro.
+- Comprobación cruzada: lecturas del BIN = ultimoCiclo × sensores. Si no cuadra, WARN sin abortar (el BIN se escribe antes que el XML en cada ciclo).
+
+### Reglas
+- Veredicto en modelo: IDENTIFICADO, SIN_INCIDENTE, INDETERMINADO. Fuera de TipoIncidente porque el simulador sortea con values().
+- Correlación por IDs: lecturas ANOMALA de un solo sensor (BIN) → subsistema y sector (XML) → operaciones de ese subsistema en la ventana de ciclos (TXT).
+- El XML confirma: subsistema no OPERATIVO y cicloUltimoCambio = último ciclo anómalo. El estado del sector es efecto, no condición (el rayo tractor deja SEC-04 OPERATIVO).
+- Regla: switch sin default sobre TipoSubsistema + dirección (bajo mínimo / sobre máximo). REACTOR no tiene incidente.
+- TXT: rayo tractor e intrusión → ACCESO con credencial ajena a la plantilla (ni SISTEMA ni un oficial del XML); el resto → AVISO sobre el subsistema. No se buscan textos de mensajes.
+- SIN_INCIDENTE solo si no hay lecturas ANOMALA ni SOSPECHOSA y todo el XML está OPERATIVO. Cualquier contradicción → INDETERMINADO con su motivo.
+- ResultadoAnalisis (record) en modelo, para que persistencia lo escriba sin conocer forense.
+- Oficial al mando = menor ordinal de RangoOficial en el sector.
+
+### Salidas (salida/)
+- informe_forense.txt: BufferedWriter UTF-8 sin modo añadir. Veredicto, motivo, efectos y conclusión imperial.
+- lecturas_anomalas.bin: solo las ANOMALA, mismo registro de 20 bytes, con DataOutputStream secuencial (no RandomAccessFile: no hay acceso por posición). Vacío en SIN_INCIDENTE.
+- elementos_afectados.xml: DOM. Raíz con veredicto e incidente; solo sector → subsistema → sensor afectados y oficialAlMando. Raíz vacía en SIN_INCIDENTE.
+
+### AnalizadorApp
+- Argumentos opcionales [carpetaDatos] [carpetaSalida]; por defecto datos/ y salida/.
+- Comprueba los tres ficheros antes de analizar: si falta alguno, ERROR con todos los que faltan y fin sin salidas.
+- IOException capturada con ERROR y la excepción como causa.
+
+## Fase 5 — Pruebas y entrega (cerrada)
+- Log4j: propiedad interna renombrada a nombrePrograma; con el mismo nombre que la del sistema entraba en bucle cuando no estaba definida.
+- Tests JUnit 5 con @TempDir y Random con semilla fija (reproducibles): texto, binario (RandomAccessFile), XML (DOM + SAX), excepción, 6 incidentes parametrizados (@EnumSource) e integración simulador → AnalizadorApp → salidas.
+- README.md e IA.md en la raíz. Ejecución final conservada en datos/, salida/ y logs/.

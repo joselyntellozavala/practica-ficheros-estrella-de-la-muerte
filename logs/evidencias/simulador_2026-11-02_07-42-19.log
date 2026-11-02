@@ -1,0 +1,211 @@
+2026-11-02 07:42:19.988 INFO  [main] SimuladorApp - Simulador iniciado
+2026-11-02 07:42:19.994 INFO  [main] FicheroLectura - Fichero de mediciones preparado: datos\lecturas.bin con 12 sensores
+2026-11-02 07:42:19.995 INFO  [main] FicheroHistorico - Fichero histórico de la estación creado en: datos\historico_operaciones.txt
+2026-11-02 07:42:19.996 INFO  [main] EscritorEstacionXml - Escritor de la estación creado en: datos\estructura_estacion.xml
+2026-11-02 07:42:19.997 INFO  [main] EstacionImperial - Estación Imperial creada: nombre=Estrella de la muerte
+2026-11-02 07:42:19.999 INFO  [main] Sector - Sector creado: id=SEC-01, tipo=MANDO, estado=OPERATIVO
+2026-11-02 07:42:19.999 INFO  [main] Sector - Sector creado: id=SEC-02, tipo=DETENCION, estado=OPERATIVO
+2026-11-02 07:42:19.999 INFO  [main] Sector - Sector creado: id=SEC-03, tipo=HANGARES, estado=OPERATIVO
+2026-11-02 07:42:19.999 INFO  [main] Sector - Sector creado: id=SEC-04, tipo=NUCLEO, estado=OPERATIVO
+2026-11-02 07:42:19.999 INFO  [main] Sector - Sector creado: id=SEC-05, tipo=RESIDUOS, estado=OPERATIVO
+2026-11-02 07:42:19.999 INFO  [main] Sector - Sector creado: id=SEC-06, tipo=SUPERFICIE, estado=OPERATIVO
+2026-11-02 07:42:20.000 INFO  [main] EstacionImperial - Sector SEC-01 añadido a la estación
+2026-11-02 07:42:20.000 INFO  [main] EstacionImperial - Sector SEC-02 añadido a la estación
+2026-11-02 07:42:20.000 INFO  [main] EstacionImperial - Sector SEC-03 añadido a la estación
+2026-11-02 07:42:20.000 INFO  [main] EstacionImperial - Sector SEC-04 añadido a la estación
+2026-11-02 07:42:20.000 INFO  [main] EstacionImperial - Sector SEC-05 añadido a la estación
+2026-11-02 07:42:20.000 INFO  [main] EstacionImperial - Sector SEC-06 añadido a la estación
+2026-11-02 07:42:20.002 INFO  [main] Subsistema - Subsistema creado: id=RX-01, nombre=Reactor principal, sector=SEC-04, tipo=REACTOR, estado=OPERATIVO
+2026-11-02 07:42:20.002 INFO  [main] Sensor - Sensor creado: id=1, subsistema=RX-01, tipo=POTENCIA, rango=[800.0, 1200.0] MW
+2026-11-02 07:42:20.002 INFO  [main] Subsistema - Sensor 1 añadido a RX-01
+2026-11-02 07:42:20.003 INFO  [main] Sector - Subsistema RX-01 añadido a SEC-04
+2026-11-02 07:42:20.003 INFO  [main] Subsistema - Subsistema creado: id=RT-01, nombre=Rayo tractor, sector=SEC-04, tipo=RAYO_TRACTOR, estado=OPERATIVO
+2026-11-02 07:42:20.003 INFO  [main] Sensor - Sensor creado: id=2, subsistema=RT-01, tipo=POTENCIA, rango=[40.0, 60.0] MW
+2026-11-02 07:42:20.003 INFO  [main] Subsistema - Sensor 2 añadido a RT-01
+2026-11-02 07:42:20.003 INFO  [main] Sector - Subsistema RT-01 añadido a SEC-04
+2026-11-02 07:42:20.004 INFO  [main] Subsistema - Subsistema creado: id=AA-23, nombre=Bloque de detención AA-23, sector=SEC-02, tipo=BLOQUE_DETENCION, estado=OPERATIVO
+2026-11-02 07:42:20.004 INFO  [main] Sensor - Sensor creado: id=3, subsistema=AA-23, tipo=CELDAS_ABIERTAS, rango=[0.0, 0.0] celdas
+2026-11-02 07:42:20.004 INFO  [main] Subsistema - Sensor 3 añadido a AA-23
+2026-11-02 07:42:20.004 INFO  [main] Sector - Subsistema AA-23 añadido a SEC-02
+2026-11-02 07:42:20.004 INFO  [main] Subsistema - Subsistema creado: id=HG-327, nombre=Hangar 327, sector=SEC-03, tipo=HANGAR, estado=OPERATIVO
+2026-11-02 07:42:20.004 INFO  [main] Sensor - Sensor creado: id=4, subsistema=HG-327, tipo=SUJETOS_DETECTADOS, rango=[0.0, 6.0] sujetos
+2026-11-02 07:42:20.004 INFO  [main] Subsistema - Sensor 4 añadido a HG-327
+2026-11-02 07:42:20.005 INFO  [main] Sector - Subsistema HG-327 añadido a SEC-03
+2026-11-02 07:42:20.005 INFO  [main] Subsistema - Subsistema creado: id=CP-3263827, nombre=Compactador 3263827, sector=SEC-05, tipo=COMPACTADOR, estado=OPERATIVO
+2026-11-02 07:42:20.005 INFO  [main] Sensor - Sensor creado: id=5, subsistema=CP-3263827, tipo=PRESION, rango=[90.0, 110.0] kPa
+2026-11-02 07:42:20.005 INFO  [main] Subsistema - Sensor 5 añadido a CP-3263827
+2026-11-02 07:42:20.005 INFO  [main] Sector - Subsistema CP-3263827 añadido a SEC-05
+2026-11-02 07:42:20.005 INFO  [main] Subsistema - Subsistema creado: id=CT-01, nombre=Conducto térmico de escape, sector=SEC-06, tipo=CONDUCTO_TERMICO, estado=OPERATIVO
+2026-11-02 07:42:20.005 INFO  [main] Sensor - Sensor creado: id=6, subsistema=CT-01, tipo=TEMPERATURA, rango=[300.0, 350.0] K
+2026-11-02 07:42:20.005 INFO  [main] Subsistema - Sensor 6 añadido a CT-01
+2026-11-02 07:42:20.006 INFO  [main] Sector - Subsistema CT-01 añadido a SEC-06
+2026-11-02 07:42:20.006 INFO  [main] Subsistema - Subsistema creado: id=SV-01, nombre=Soporte vital mando, sector=SEC-01, tipo=SOPORTE_VITAL, estado=OPERATIVO
+2026-11-02 07:42:20.006 INFO  [main] Sensor - Sensor creado: id=7, subsistema=SV-01, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 07:42:20.006 INFO  [main] Subsistema - Sensor 7 añadido a SV-01
+2026-11-02 07:42:20.006 INFO  [main] Sector - Subsistema SV-01 añadido a SEC-01
+2026-11-02 07:42:20.006 INFO  [main] Subsistema - Subsistema creado: id=SV-02, nombre=Soporte vital detención, sector=SEC-02, tipo=SOPORTE_VITAL, estado=OPERATIVO
+2026-11-02 07:42:20.006 INFO  [main] Sensor - Sensor creado: id=8, subsistema=SV-02, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 07:42:20.007 INFO  [main] Subsistema - Sensor 8 añadido a SV-02
+2026-11-02 07:42:20.007 INFO  [main] Sector - Subsistema SV-02 añadido a SEC-02
+2026-11-02 07:42:20.007 INFO  [main] Subsistema - Subsistema creado: id=SV-03, nombre=Soporte vital hangares, sector=SEC-03, tipo=SOPORTE_VITAL, estado=OPERATIVO
+2026-11-02 07:42:20.007 INFO  [main] Sensor - Sensor creado: id=9, subsistema=SV-03, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 07:42:20.007 INFO  [main] Subsistema - Sensor 9 añadido a SV-03
+2026-11-02 07:42:20.007 INFO  [main] Sector - Subsistema SV-03 añadido a SEC-03
+2026-11-02 07:42:20.007 INFO  [main] Subsistema - Subsistema creado: id=SV-04, nombre=Soporte vital núcleo, sector=SEC-04, tipo=SOPORTE_VITAL, estado=OPERATIVO
+2026-11-02 07:42:20.007 INFO  [main] Sensor - Sensor creado: id=10, subsistema=SV-04, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 07:42:20.007 INFO  [main] Subsistema - Sensor 10 añadido a SV-04
+2026-11-02 07:42:20.007 INFO  [main] Sector - Subsistema SV-04 añadido a SEC-04
+2026-11-02 07:42:20.008 INFO  [main] Subsistema - Subsistema creado: id=SV-05, nombre=Soporte vital residuos, sector=SEC-05, tipo=SOPORTE_VITAL, estado=OPERATIVO
+2026-11-02 07:42:20.008 INFO  [main] Sensor - Sensor creado: id=11, subsistema=SV-05, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 07:42:20.008 INFO  [main] Subsistema - Sensor 11 añadido a SV-05
+2026-11-02 07:42:20.008 INFO  [main] Sector - Subsistema SV-05 añadido a SEC-05
+2026-11-02 07:42:20.008 INFO  [main] Subsistema - Subsistema creado: id=SV-06, nombre=Soporte vital superficie, sector=SEC-06, tipo=SOPORTE_VITAL, estado=OPERATIVO
+2026-11-02 07:42:20.008 INFO  [main] Sensor - Sensor creado: id=12, subsistema=SV-06, tipo=OXIGENO, rango=[19.5, 23.5] %
+2026-11-02 07:42:20.008 INFO  [main] Subsistema - Sensor 12 añadido a SV-06
+2026-11-02 07:42:20.016 INFO  [main] Sector - Subsistema SV-06 añadido a SEC-06
+2026-11-02 07:42:20.017 INFO  [main] Oficial - Oficial creado: id=OF-01, nombre=Wilhuff Tarkin, rango=GRAN_MOFF, sector=SEC-01
+2026-11-02 07:42:20.018 INFO  [main] EstacionImperial - Oficial OF-01 añadido a la estación en SEC-01
+2026-11-02 07:42:20.018 INFO  [main] Oficial - Oficial creado: id=OF-02, nombre=Conan Antonio Motti, rango=ALMIRANTE, sector=SEC-01
+2026-11-02 07:42:20.018 INFO  [main] EstacionImperial - Oficial OF-02 añadido a la estación en SEC-01
+2026-11-02 07:42:20.019 INFO  [main] Oficial - Oficial creado: id=OF-03, nombre=Wullf Yularen, rango=CORONEL, sector=SEC-02
+2026-11-02 07:42:20.019 INFO  [main] EstacionImperial - Oficial OF-03 añadido a la estación en SEC-02
+2026-11-02 07:42:20.019 INFO  [main] Oficial - Oficial creado: id=OF-04, nombre=Pell Darrow, rango=TENIENTE, sector=SEC-02
+2026-11-02 07:42:20.019 INFO  [main] EstacionImperial - Oficial OF-04 añadido a la estación en SEC-02
+2026-11-02 07:42:20.019 INFO  [main] Oficial - Oficial creado: id=OF-05, nombre=Varek Thrane, rango=COMANDANTE, sector=SEC-03
+2026-11-02 07:42:20.019 INFO  [main] EstacionImperial - Oficial OF-05 añadido a la estación en SEC-03
+2026-11-02 07:42:20.019 INFO  [main] Oficial - Oficial creado: id=OF-06, nombre=Lis Kesh, rango=ALFEREZ, sector=SEC-03
+2026-11-02 07:42:20.020 INFO  [main] EstacionImperial - Oficial OF-06 añadido a la estación en SEC-03
+2026-11-02 07:42:20.020 INFO  [main] Oficial - Oficial creado: id=OF-07, nombre=Cassio Tagge, rango=GENERAL, sector=SEC-04
+2026-11-02 07:42:20.020 INFO  [main] EstacionImperial - Oficial OF-07 añadido a la estación en SEC-04
+2026-11-02 07:42:20.020 INFO  [main] Oficial - Oficial creado: id=OF-08, nombre=Orrin Vael, rango=MAYOR, sector=SEC-05
+2026-11-02 07:42:20.020 INFO  [main] EstacionImperial - Oficial OF-08 añadido a la estación en SEC-05
+2026-11-02 07:42:20.020 INFO  [main] Oficial - Oficial creado: id=OF-09, nombre=Dax Morrell, rango=CAPITAN, sector=SEC-06
+2026-11-02 07:42:20.020 INFO  [main] EstacionImperial - Oficial OF-09 añadido a la estación en SEC-06
+2026-11-02 07:42:20.022 INFO  [main] Simulacion - Estación montada: EstacionImperial[Estrella de la muerte, 6 sectores, 9 oficiales]
+2026-11-02 07:42:20.022 INFO  [main] Simulacion - Simulación creada en datos (modo: normal)
+2026-11-02 07:42:20.025 INFO  [main] EscritorEstacionXml - Estructura XML creada: 6 sectores, 9 oficiales
+2026-11-02 07:42:20.080 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 07:42:20.081 INFO  [main] Simulacion - Incidente previsto: FALLO_COMPACTADOR a partir del ciclo 4 (sensor 5)
+2026-11-02 07:42:20.084 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=1, posición=0
+2026-11-02 07:42:20.084 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=2, posición=20
+2026-11-02 07:42:20.084 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=3, posición=40
+2026-11-02 07:42:20.085 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=4, posición=60
+2026-11-02 07:42:20.085 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=5, posición=80
+2026-11-02 07:42:20.085 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=6, posición=100
+2026-11-02 07:42:20.085 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=7, posición=120
+2026-11-02 07:42:20.086 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=8, posición=140
+2026-11-02 07:42:20.086 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=9, posición=160
+2026-11-02 07:42:20.086 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=10, posición=180
+2026-11-02 07:42:20.086 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=11, posición=200
+2026-11-02 07:42:20.087 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=1, sensor=12, posición=220
+2026-11-02 07:42:20.088 DEBUG [main] FicheroHistorico - Operación registrada: ciclo1, tipo=MANTENIMIENTO
+2026-11-02 07:42:20.089 DEBUG [main] FicheroHistorico - Operación registrada: ciclo1, tipo=RELEVO
+2026-11-02 07:42:20.089 INFO  [main] EscritorEstacionXml - Último ciclo actualizado: 1
+2026-11-02 07:42:20.091 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 07:42:20.091 INFO  [main] Simulacion - Ciclo 1 completado: 12 lecturas, 0 fuera de rango
+2026-11-02 07:42:20.091 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=1, posición=240
+2026-11-02 07:42:20.092 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=2, posición=260
+2026-11-02 07:42:20.092 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=3, posición=280
+2026-11-02 07:42:20.092 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=4, posición=300
+2026-11-02 07:42:20.092 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=5, posición=320
+2026-11-02 07:42:20.093 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=6, posición=340
+2026-11-02 07:42:20.093 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=7, posición=360
+2026-11-02 07:42:20.093 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=8, posición=380
+2026-11-02 07:42:20.094 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=9, posición=400
+2026-11-02 07:42:20.094 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=10, posición=420
+2026-11-02 07:42:20.094 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=11, posición=440
+2026-11-02 07:42:20.094 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=2, sensor=12, posición=460
+2026-11-02 07:42:20.095 DEBUG [main] FicheroHistorico - Operación registrada: ciclo2, tipo=MANTENIMIENTO
+2026-11-02 07:42:20.095 DEBUG [main] FicheroHistorico - Operación registrada: ciclo2, tipo=MANTENIMIENTO
+2026-11-02 07:42:20.095 INFO  [main] EscritorEstacionXml - Último ciclo actualizado: 2
+2026-11-02 07:42:20.097 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 07:42:20.097 INFO  [main] Simulacion - Ciclo 2 completado: 12 lecturas, 0 fuera de rango
+2026-11-02 07:42:20.098 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=1, posición=480
+2026-11-02 07:42:20.098 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=2, posición=500
+2026-11-02 07:42:20.099 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=3, posición=520
+2026-11-02 07:42:20.099 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=4, posición=540
+2026-11-02 07:42:20.099 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=5, posición=560
+2026-11-02 07:42:20.100 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=6, posición=580
+2026-11-02 07:42:20.100 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=7, posición=600
+2026-11-02 07:42:20.100 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=8, posición=620
+2026-11-02 07:42:20.100 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=9, posición=640
+2026-11-02 07:42:20.101 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=10, posición=660
+2026-11-02 07:42:20.101 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=11, posición=680
+2026-11-02 07:42:20.101 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=3, sensor=12, posición=700
+2026-11-02 07:42:20.102 DEBUG [main] FicheroHistorico - Operación registrada: ciclo3, tipo=ORDEN
+2026-11-02 07:42:20.102 DEBUG [main] FicheroHistorico - Operación registrada: ciclo3, tipo=ORDEN
+2026-11-02 07:42:20.102 INFO  [main] EscritorEstacionXml - Último ciclo actualizado: 3
+2026-11-02 07:42:20.104 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 07:42:20.104 INFO  [main] Simulacion - Ciclo 3 completado: 12 lecturas, 0 fuera de rango
+2026-11-02 07:42:20.104 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=1, posición=720
+2026-11-02 07:42:20.105 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=2, posición=740
+2026-11-02 07:42:20.105 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=3, posición=760
+2026-11-02 07:42:20.105 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=4, posición=780
+2026-11-02 07:42:20.106 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=5, posición=800
+2026-11-02 07:42:20.106 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=6, posición=820
+2026-11-02 07:42:20.106 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=7, posición=840
+2026-11-02 07:42:20.107 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=8, posición=860
+2026-11-02 07:42:20.107 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=9, posición=880
+2026-11-02 07:42:20.107 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=10, posición=900
+2026-11-02 07:42:20.107 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=11, posición=920
+2026-11-02 07:42:20.108 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=4, sensor=12, posición=940
+2026-11-02 07:42:20.109 DEBUG [main] FicheroHistorico - Operación registrada: ciclo4, tipo=MANTENIMIENTO
+2026-11-02 07:42:20.109 DEBUG [main] FicheroHistorico - Operación registrada: ciclo4, tipo=ACCESO
+2026-11-02 07:42:20.110 DEBUG [main] FicheroHistorico - Operación registrada: ciclo4, tipo=AVISO
+2026-11-02 07:42:20.110 INFO  [main] EscritorEstacionXml - Último ciclo actualizado: 4
+2026-11-02 07:42:20.111 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 07:42:20.112 INFO  [main] FicheroLectura - Lectura obtenida: ciclo=3, sensor=5, posicion=560, estado=NORMAL
+2026-11-02 07:42:20.112 INFO  [main] Simulacion - Ciclo 4 completado: 12 lecturas, 1 fuera de rango
+2026-11-02 07:42:20.112 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=1, posición=960
+2026-11-02 07:42:20.112 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=2, posición=980
+2026-11-02 07:42:20.113 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=3, posición=1000
+2026-11-02 07:42:20.119 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=4, posición=1020
+2026-11-02 07:42:20.120 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=5, posición=1040
+2026-11-02 07:42:20.120 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=6, posición=1060
+2026-11-02 07:42:20.120 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=7, posición=1080
+2026-11-02 07:42:20.121 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=8, posición=1100
+2026-11-02 07:42:20.121 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=9, posición=1120
+2026-11-02 07:42:20.122 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=10, posición=1140
+2026-11-02 07:42:20.122 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=11, posición=1160
+2026-11-02 07:42:20.122 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=5, sensor=12, posición=1180
+2026-11-02 07:42:20.123 DEBUG [main] FicheroHistorico - Operación registrada: ciclo5, tipo=ACCESO
+2026-11-02 07:42:20.123 DEBUG [main] FicheroHistorico - Operación registrada: ciclo5, tipo=ORDEN
+2026-11-02 07:42:20.123 INFO  [main] EscritorEstacionXml - Último ciclo actualizado: 5
+2026-11-02 07:42:20.125 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 07:42:20.126 INFO  [main] FicheroLectura - Lectura obtenida: ciclo=4, sensor=5, posicion=800, estado=SOSPECHOSA
+2026-11-02 07:42:20.126 INFO  [main] FicheroLectura - Lectura obtenida: ciclo=3, sensor=5, posicion=560, estado=NORMAL
+2026-11-02 07:42:20.126 INFO  [main] Simulacion - Ciclo 5 completado: 12 lecturas, 1 fuera de rango
+2026-11-02 07:42:20.127 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=1, posición=1200
+2026-11-02 07:42:20.127 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=2, posición=1220
+2026-11-02 07:42:20.127 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=3, posición=1240
+2026-11-02 07:42:20.128 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=4, posición=1260
+2026-11-02 07:42:20.128 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=5, posición=1280
+2026-11-02 07:42:20.128 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=6, posición=1300
+2026-11-02 07:42:20.128 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=7, posición=1320
+2026-11-02 07:42:20.129 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=8, posición=1340
+2026-11-02 07:42:20.129 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=9, posición=1360
+2026-11-02 07:42:20.130 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=10, posición=1380
+2026-11-02 07:42:20.130 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=11, posición=1400
+2026-11-02 07:42:20.131 DEBUG [main] FicheroLectura - Lectura guardada: ciclo=6, sensor=12, posición=1420
+2026-11-02 07:42:20.131 DEBUG [main] FicheroHistorico - Operación registrada: ciclo6, tipo=MANTENIMIENTO
+2026-11-02 07:42:20.132 DEBUG [main] FicheroHistorico - Operación registrada: ciclo6, tipo=MANTENIMIENTO
+2026-11-02 07:42:20.132 INFO  [main] EscritorEstacionXml - Último ciclo actualizado: 6
+2026-11-02 07:42:20.133 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 07:42:20.134 INFO  [main] FicheroLectura - Lectura obtenida: ciclo=5, sensor=5, posicion=1040, estado=SOSPECHOSA
+2026-11-02 07:42:20.134 INFO  [main] FicheroLectura - Lectura obtenida: ciclo=4, sensor=5, posicion=800, estado=SOSPECHOSA
+2026-11-02 07:42:20.135 INFO  [main] FicheroLectura - Estado de lectura cambiado: ciclo=4, sensor=5, estado=ANOMALA, posicion=800
+2026-11-02 07:42:20.135 INFO  [main] FicheroLectura - Estado de lectura cambiado: ciclo=5, sensor=5, estado=ANOMALA, posicion=1040
+2026-11-02 07:42:20.135 INFO  [main] FicheroLectura - Estado de lectura cambiado: ciclo=6, sensor=5, estado=ANOMALA, posicion=1280
+2026-11-02 07:42:20.136 WARN  [main] Simulacion - Anomalía confirmada en el sensor 5: ciclos 4 a 6 marcados como ANOMALA
+2026-11-02 07:42:20.136 INFO  [main] Subsistema - Subsistema CP-3263827 cambia de estado en el ciclo 6: OPERATIVO -> FUERA_DE_SERVICIO
+2026-11-02 07:42:20.137 INFO  [main] EscritorEstacionXml - Subsistema actualizado: id=CP-3263827, estado=FUERA_DE_SERVICIO, ciclo=6
+2026-11-02 07:42:20.140 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 07:42:20.140 INFO  [main] Sector - Sector SEC-05 cambia de estado: OPERATIVO -> ALERTA
+2026-11-02 07:42:20.141 INFO  [main] EscritorEstacionXml - Sector actualizado: id=SEC-05, estado=ALERTA
+2026-11-02 07:42:20.142 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 07:42:20.143 DEBUG [main] FicheroHistorico - Operación registrada: ciclo6, tipo=AVISO
+2026-11-02 07:42:20.145 ERROR [main] SimuladorApp - Evento crítico capturado en el ciclo 6 (sensor 5): Anomalía crítica: sensor 5 fuera de rango durante 3 ciclos seguidos (ciclo 6)
+es.joselyn.proyecto.excepcion.AnomaliaCriticaException: Anomalía crítica: sensor 5 fuera de rango durante 3 ciclos seguidos (ciclo 6)
+	at es.joselyn.proyecto.simulacion.Simulacion.ejecutar(Simulacion.java:213)
+	at es.joselyn.proyecto.app.SimuladorApp.main(SimuladorApp.java:37)
+2026-11-02 07:42:20.146 INFO  [main] SimuladorApp - Simulador finalizado. Datos en: C:\Users\josel\Desktop\PROYECTO UD1\estrella-de-la-muerte\datos

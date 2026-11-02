@@ -1,42 +1,11 @@
-2026-10-24 16:55:38.031 DEBUG [main] Main - Telemetría de prueba número 258
-2026-10-24 16:55:38.054 DEBUG [main] Main - Telemetría de prueba número 259
-2026-10-24 16:55:38.055 DEBUG [main] Main - Telemetría de prueba número 260
-2026-10-24 16:55:38.055 DEBUG [main] Main - Telemetría de prueba número 261
-2026-10-24 16:55:38.055 DEBUG [main] Main - Telemetría de prueba número 262
-2026-10-24 16:55:38.055 DEBUG [main] Main - Telemetría de prueba número 263
-2026-10-24 16:55:38.056 DEBUG [main] Main - Telemetría de prueba número 264
-2026-10-24 16:55:38.056 DEBUG [main] Main - Telemetría de prueba número 265
-2026-10-24 16:55:38.056 DEBUG [main] Main - Telemetría de prueba número 266
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 267
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 268
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 269
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 270
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 271
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 272
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 273
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 274
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 275
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 276
-2026-10-24 16:55:38.057 DEBUG [main] Main - Telemetría de prueba número 277
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 278
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 279
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 280
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 281
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 282
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 283
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 284
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 285
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 286
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 287
-2026-10-24 16:55:38.058 DEBUG [main] Main - Telemetría de prueba número 288
-2026-10-24 16:55:38.059 DEBUG [main] Main - Telemetría de prueba número 289
-2026-10-24 16:55:38.059 DEBUG [main] Main - Telemetría de prueba número 290
-2026-10-24 16:55:38.059 DEBUG [main] Main - Telemetría de prueba número 291
-2026-10-24 16:55:38.059 DEBUG [main] Main - Telemetría de prueba número 292
-2026-10-24 16:55:38.059 DEBUG [main] Main - Telemetría de prueba número 293
-2026-10-24 16:55:38.059 DEBUG [main] Main - Telemetría de prueba número 294
-2026-10-24 16:55:38.059 DEBUG [main] Main - Telemetría de prueba número 295
-2026-10-24 16:55:38.059 DEBUG [main] Main - Telemetría de prueba número 296
-2026-10-24 16:55:38.059 DEBUG [main] Main - Telemetría de prueba número 297
-2026-10-24 16:55:38.060 DEBUG [main] Main - Telemetría de prueba número 298
-2026-10-24 16:55:38.060 DEBUG [main] Main - Telemetría de prueba número 299
+2026-11-02 17:01:26.246 INFO  [main] FicheroLectura - Estado de lectura cambiado: ciclo=6, sensor=2, estado=ANOMALA, posicion=1220
+2026-11-02 17:01:26.253 WARN  [main] Simulacion - Anomalía confirmada en el sensor 2: ciclos 4 a 6 marcados como ANOMALA
+2026-11-02 17:01:26.253 INFO  [main] Subsistema - Subsistema RT-01 cambia de estado en el ciclo 6: OPERATIVO -> FUERA_DE_SERVICIO
+2026-11-02 17:01:26.254 INFO  [main] EscritorEstacionXml - Subsistema actualizado: id=RT-01, estado=FUERA_DE_SERVICIO, ciclo=6
+2026-11-02 17:01:26.256 INFO  [main] EscritorEstacionXml - XML guardado en datos\estructura_estacion.xml
+2026-11-02 17:01:26.257 DEBUG [main] FicheroHistorico - Operación registrada: ciclo6, tipo=AVISO
+2026-11-02 17:01:26.259 ERROR [main] SimuladorApp - Evento crítico capturado en el ciclo 6 (sensor 2): Anomalía crítica: sensor 2 fuera de rango durante 3 ciclos seguidos (ciclo 6)
+es.joselyn.proyecto.excepcion.AnomaliaCriticaException: Anomalía crítica: sensor 2 fuera de rango durante 3 ciclos seguidos (ciclo 6)
+	at es.joselyn.proyecto.simulacion.Simulacion.ejecutar(Simulacion.java:213)
+	at es.joselyn.proyecto.app.SimuladorApp.main(SimuladorApp.java:37)
+2026-11-02 17:01:26.261 INFO  [main] SimuladorApp - Simulador finalizado. Datos en: C:\Users\josel\Desktop\PROYECTO UD1\estrella-de-la-muerte\datos

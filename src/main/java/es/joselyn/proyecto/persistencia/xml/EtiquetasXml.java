@@ -21,6 +21,11 @@ public final class EtiquetasXml {
     public static final String ATRIBUTO_ULTIMO_CICLO = "ultimoCiclo";
     public static final String ATRIBUTO_CICLO_ULTIMO_CAMBIO = "cicloUltimoCambio";
 
+    public static final String ELEMENTO_ANALISIS = "analisis";
+    public static final String ELEMENTO_OFICIAL_AL_MANDO = "oficialAlMando";
+
+    public static final String ATRIBUTO_VEREDICTO = "veredicto";
+    public static final String ATRIBUTO_INCIDENTE = "incidente";
     private EtiquetasXml() {
     }
 }

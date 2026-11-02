@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<estacion nombre="Estrella de la muerte" ultimoCiclo="6">
+    <sectores>
+        <sector estado="OPERATIVO" id="SEC-01" tipo="MANDO">
+            <subsistema estado="OPERATIVO" id="SV-01" nombre="Soporte vital mando" tipo="SOPORTE_VITAL">
+                <sensor id="7" maximo="23.5" minimo="19.5" tipo="OXIGENO"/>
+            </subsistema>
+        </sector>
+        <sector estado="OPERATIVO" id="SEC-02" tipo="DETENCION">
+            <subsistema estado="OPERATIVO" id="AA-23" nombre="Bloque de detención AA-23" tipo="BLOQUE_DETENCION">
+                <sensor id="3" maximo="0.0" minimo="0.0" tipo="CELDAS_ABIERTAS"/>
+            </subsistema>
+            <subsistema estado="OPERATIVO" id="SV-02" nombre="Soporte vital detención" tipo="SOPORTE_VITAL">
+                <sensor id="8" maximo="23.5" minimo="19.5" tipo="OXIGENO"/>
+            </subsistema>
+        </sector>
+        <sector estado="OPERATIVO" id="SEC-03" tipo="HANGARES">
+            <subsistema estado="OPERATIVO" id="HG-327" nombre="Hangar 327" tipo="HANGAR">
+                <sensor id="4" maximo="6.0" minimo="0.0" tipo="SUJETOS_DETECTADOS"/>
+            </subsistema>
+            <subsistema estado="OPERATIVO" id="SV-03" nombre="Soporte vital hangares" tipo="SOPORTE_VITAL">
+                <sensor id="9" maximo="23.5" minimo="19.5" tipo="OXIGENO"/>
+            </subsistema>
+        </sector>
+        <sector estado="OPERATIVO" id="SEC-04" tipo="NUCLEO">
+            <subsistema estado="OPERATIVO" id="RX-01" nombre="Reactor principal" tipo="REACTOR">
+                <sensor id="1" maximo="1200.0" minimo="800.0" tipo="POTENCIA"/>
+            </subsistema>
+            <subsistema cicloUltimoCambio="6" estado="FUERA_DE_SERVICIO" id="RT-01" nombre="Rayo tractor" tipo="RAYO_TRACTOR">
+                <sensor id="2" maximo="60.0" minimo="40.0" tipo="POTENCIA"/>
+            </subsistema>
+            <subsistema estado="OPERATIVO" id="SV-04" nombre="Soporte vital núcleo" tipo="SOPORTE_VITAL">
+                <sensor id="10" maximo="23.5" minimo="19.5" tipo="OXIGENO"/>
+            </subsistema>
+        </sector>
+        <sector estado="OPERATIVO" id="SEC-05" tipo="RESIDUOS">
+            <subsistema estado="OPERATIVO" id="CP-3263827" nombre="Compactador 3263827" tipo="COMPACTADOR">
+                <sensor id="5" maximo="110.0" minimo="90.0" tipo="PRESION"/>
+            </subsistema>
+            <subsistema estado="OPERATIVO" id="SV-05" nombre="Soporte vital residuos" tipo="SOPORTE_VITAL">
+                <sensor id="11" maximo="23.5" minimo="19.5" tipo="OXIGENO"/>
+            </subsistema>
+        </sector>
+        <sector estado="OPERATIVO" id="SEC-06" tipo="SUPERFICIE">
+            <subsistema estado="OPERATIVO" id="CT-01" nombre="Conducto térmico de escape" tipo="CONDUCTO_TERMICO">
+                <sensor id="6" maximo="350.0" minimo="300.0" tipo="TEMPERATURA"/>
+            </subsistema>
+            <subsistema estado="OPERATIVO" id="SV-06" nombre="Soporte vital superficie" tipo="SOPORTE_VITAL">
+                <sensor id="12" maximo="23.5" minimo="19.5" tipo="OXIGENO"/>
+            </subsistema>
+        </sector>
+    </sectores>
+    <oficiales>
+        <oficial id="OF-01" nombre="Wilhuff Tarkin" rango="GRAN_MOFF" sector="SEC-01"/>
+        <oficial id="OF-02" nombre="Conan Antonio Motti" rango="ALMIRANTE" sector="SEC-01"/>
+        <oficial id="OF-03" nombre="Wullf Yularen" rango="CORONEL" sector="SEC-02"/>
+        <oficial id="OF-04" nombre="Pell Darrow" rango="TENIENTE" sector="SEC-02"/>
+        <oficial id="OF-05" nombre="Varek Thrane" rango="COMANDANTE" sector="SEC-03"/>
+        <oficial id="OF-06" nombre="Lis Kesh" rango="ALFEREZ" sector="SEC-03"/>
+        <oficial id="OF-07" nombre="Cassio Tagge" rango="GENERAL" sector="SEC-04"/>
+        <oficial id="OF-08" nombre="Orrin Vael" rango="MAYOR" sector="SEC-05"/>
+        <oficial id="OF-09" nombre="Dax Morrell" rango="CAPITAN" sector="SEC-06"/>
+    </oficiales>
+</estacion>

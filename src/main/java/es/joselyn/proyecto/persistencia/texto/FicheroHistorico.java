@@ -85,7 +85,7 @@ public class FicheroHistorico {
             Operacion operacion = new Operacion(fechaHora, ciclo, sector, subsistema, credencial, tipo, mensaje);
             return operacion;
         } catch (DateTimeParseException | IllegalArgumentException e) {
-            throw new IOException("Línea " + numeroLinea + " con formato incorrecto: " + linea, e);
+            throw new IOException("Línea " + numeroLinea + ": se esperaban 7 campos y hay " + arrayDatos.length + ": " + linea);
         }
     }
 }

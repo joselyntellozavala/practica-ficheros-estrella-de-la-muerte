@@ -119,11 +119,16 @@ public class FicheroLectura {
     }
 
     private Lectura leerRegistro(RandomAccessFile randomAccessFile) throws IOException {
+        long posicionRegistro = randomAccessFile.getFilePointer();
         int ciclo = randomAccessFile.readInt();
         int idSensor = randomAccessFile.readInt();
         double valor = randomAccessFile.readDouble();
         int codigo = randomAccessFile.readInt();
 
-        return new Lectura(ciclo, idSensor, valor, EstadoLectura.desdeCodigo(codigo));
+        try {
+            return new Lectura(ciclo, idSensor, valor, EstadoLectura.desdeCodigo(codigo));
+        } catch (IllegalArgumentException e) {
+            throw new IOException("Registro corrupto en la posición " + posicionRegistro + " de " + ruta + ": " + e.getMessage(), e);
+        }
     }
 }
