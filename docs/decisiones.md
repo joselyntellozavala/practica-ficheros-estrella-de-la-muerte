@@ -92,3 +92,30 @@ Código listo el lunes 26; revisión hasta el 31; entrega el 2/11 a las 23:59 (h
 
 ### Implementado por adelantado
 FicheroLecturas, EscritorEstacionXml, FicheroHistorico, EtiquetasXml.
+
+## Fase 2-3 — Simulador (cerrada)
+
+### Modelo
+- TipoSensor: campo esRecuento (CELDAS_ABIERTAS y SUJETOS_DETECTADOS); se generan como enteros. Unidad de CELDAS_ABIERTAS: "celdas".
+- TipoIncidente en modelo, con descripción para el informe: es el catálogo de incidentes posibles, no la respuesta. El simulador nunca escribe su nombre en los ficheros.
+  - Nombres de evento, no de dispositivo (DESACTIVACION_RAYO_TRACTOR, FUGA_AA23...), para no chocar con TipoSubsistema.
+- Excepción renombrada a AnomaliaCriticaException: comprobada (extends Exception), con ciclo e id del sensor. Un único constructor.
+  - Una sola para los 6 incidentes: representa la detección, que es genérica.
+
+### Estación
+- Rangos: RX-01 800-1200 MW · RT-01 40-60 MW · AA-23 0-0 · HG-327 0-6 · CP 90-110 kPa · CT-01 300-350 K · SV 19,5-23,5 %.
+- Plantilla de 9 oficiales (OF-01…OF-09), al menos uno por sector y sin rangos repetidos en el mismo sector.
+- Credenciales: OF-XX (oficiales), SISTEMA (avisos automáticos), SIN-IDENTIFICAR (rayo tractor), TK-421 (intrusión, no está en la plantilla).
+
+### Simulación
+- Huella (record en simulacion): sensor, valor anómalo, tipo de operación, credencial, síntoma, estado de subsistema y de sector. Se crea con un switch sin default.
+- Tres modos con métodos de fábrica: normal (incidente sorteado), sinIncidente, conIncidente. Constructor privado.
+- SimuladorApp: sin argumento → normal; SIN_INCIDENTE; o el nombre del incidente. Configuraciones en .run/.
+- Al empezar se borran los tres ficheros: el BIN exige empezar en la posición 0 y el TXT se abre en modo añadir.
+- Incidente entre los ciclos 3 y 6; máximo 10 ciclos; 10 minutos simulados por ciclo; 2 operaciones de rutina por ciclo.
+- Orden de cada ciclo: BIN → TXT → XML (ultimoCiclo) → detección.
+- Detección: lectura fuera de rango → se leen por posición los 2 ciclos anteriores; si los 3 son sospechosos, se marcan ANOMALA (modificar). Usa las tres operaciones de RandomAccessFile.
+- Las consecuencias (XML y AVISO) se escriben antes del throw: en el catch todo está persistido.
+
+### Logs
+- Excepciones capturadas con ERROR y la excepción como causa (sin FATAL)
