@@ -119,3 +119,36 @@ FicheroLecturas, EscritorEstacionXml, FicheroHistorico, EtiquetasXml.
 
 ### Logs
 - Excepciones capturadas con ERROR y la excepción como causa (sin FATAL)
+
+## Fase 4 — Analizador (cerrada)
+
+### Lectura
+- XML con SAX: LectorEstacionXml + ManejadorEstacionXml (sin public, solo lo usa el lector). Reconstruye EstacionImperial: rangos y número de sensores salen del XML, no del simulador.
+  - El padre se sabe por anidamiento: sectorActual y subsistemaActual se asignan en startElement y se limpian en endElement.
+  - Errores con número de línea (Locator) → SAXParseException → IOException.
+- Subsistema: segundo constructor con cicloUltimoCambio para reconstruir sin un "cambio de estado" falso en el log. El de 5 parámetros delega con this(..., 0).
+- BIN y TXT: se reutilizan FicheroLectura y FicheroHistorico. leerRegistro convierte valores imposibles en IOException con la posición del registro.
+- Comprobación cruzada: lecturas del BIN = ultimoCiclo × sensores. Si no cuadra, WARN sin abortar (el BIN se escribe antes que el XML en cada ciclo).
+
+### Reglas
+- Veredicto en modelo: IDENTIFICADO, SIN_INCIDENTE, INDETERMINADO. Fuera de TipoIncidente porque el simulador sortea con values().
+- Correlación por IDs: lecturas ANOMALA de un solo sensor (BIN) → subsistema y sector (XML) → operaciones de ese subsistema en la ventana de ciclos (TXT).
+- El XML confirma: subsistema no OPERATIVO y cicloUltimoCambio = último ciclo anómalo. El estado del sector es efecto, no condición (el rayo tractor deja SEC-04 OPERATIVO).
+- Regla: switch sin default sobre TipoSubsistema + dirección (bajo mínimo / sobre máximo). REACTOR no tiene incidente.
+- TXT: rayo tractor e intrusión → ACCESO con credencial ajena a la plantilla (ni SISTEMA ni un oficial del XML); el resto → AVISO sobre el subsistema. No se buscan textos de mensajes.
+- SIN_INCIDENTE solo si no hay lecturas ANOMALA ni SOSPECHOSA y todo el XML está OPERATIVO. Cualquier contradicción → INDETERMINADO con su motivo.
+- ResultadoAnalisis (record) en modelo, para que persistencia lo escriba sin conocer forense.
+- Oficial al mando = menor ordinal de RangoOficial en el sector.
+
+### Salidas (salida/)
+- informe_forense.txt: BufferedWriter UTF-8 sin modo añadir. Veredicto, motivo, efectos y conclusión imperial.
+- lecturas_anomalas.bin: solo las ANOMALA, mismo registro de 20 bytes, con DataOutputStream secuencial (no RandomAccessFile: no hay acceso por posición). Vacío en SIN_INCIDENTE.
+- elementos_afectados.xml: DOM. Raíz con veredicto e incidente; solo sector → subsistema → sensor afectados y oficialAlMando. Raíz vacía en SIN_INCIDENTE.
+
+### AnalizadorApp
+- Argumentos opcionales [carpetaDatos] [carpetaSalida]; por defecto datos/ y salida/.
+- Comprueba los tres ficheros antes de analizar: si falta alguno, ERROR con todos los que faltan y fin sin salidas.
+- IOException capturada con ERROR y la excepción como causa.
+
+### Pendiente para la fase 5
+- Log4j muestra un aviso interno cuando no está definida la propiedad "programa" (ocurrirá en los tests).
