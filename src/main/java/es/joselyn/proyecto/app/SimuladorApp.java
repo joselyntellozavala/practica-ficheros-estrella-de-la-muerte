@@ -1,13 +1,15 @@
 package es.joselyn.proyecto.app;
 
-import es.joselyn.proyecto.modelo.*;
-import es.joselyn.proyecto.persistencia.xml.EscritorEstacionXml;
+import es.joselyn.proyecto.excepcion.AnomaliaCriticaException;
+import es.joselyn.proyecto.modelo.TipoIncidente;
+import es.joselyn.proyecto.simulacion.Simulacion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
+import java.util.Random;
 
 public class SimuladorApp {
 
@@ -17,48 +19,40 @@ public class SimuladorApp {
 
     private static final Logger log = LogManager.getLogger(SimuladorApp.class);
 
-    private static final String NOMBRE_ESTACION = "Estrella de la muerte";
+    private static final Path CARPETA_DATOS = Path.of("datos");
+    private static final String MODO_SIN_INCIDENTE = "SIN_INCIDENTE";
 
     public static void main(String[] args) {
 
-        log.info("Simulación iniciada: {}", NOMBRE_ESTACION);
-
-        EstacionImperial estacionImperial = new EstacionImperial(NOMBRE_ESTACION);
-        Sector mando = new Sector("SEC-01", TipoSector.MANDO, EstadoSector.OPERATIVO);
-        Sector detencion = new Sector("SEC-02", TipoSector.DETENCION, EstadoSector.OPERATIVO);
-        Sector hangares = new Sector("SEC-03", TipoSector.HANGARES, EstadoSector.OPERATIVO);
-        Sector nucleo = new Sector("SEC-04", TipoSector.NUCLEO, EstadoSector.OPERATIVO);
-        Sector residuos = new Sector("SEC-05", TipoSector.RESIDUOS, EstadoSector.OPERATIVO);
-        Sector superficie = new Sector("SEC-06", TipoSector.SUPERFICIE, EstadoSector.OPERATIVO);
-
-        estacionImperial.agregarSector(mando);
-        estacionImperial.agregarSector(detencion);
-        estacionImperial.agregarSector(hangares);
-        estacionImperial.agregarSector(nucleo);
-        estacionImperial.agregarSector(residuos);
-        estacionImperial.agregarSector(superficie);
-
-        Subsistema soporteHangares = new Subsistema("SV-03", "Soporte vital hangares", "SEC-03", TipoSubsistema.SOPORTE_VITAL, EstadoSubsistema.OPERATIVO);
-        hangares.agregarSubsistema(soporteHangares);
-        Sensor oxigeno = new Sensor(1, "SV-03", TipoSensor.OXIGENO, 19.5, 23.5);
-        soporteHangares.agregarSensor(oxigeno);
-
-        Oficial tarkin = new Oficial("OF-01", "Wilhuff Tarkin", RangoOficial.GRAN_MOFF, "SEC-01");
-        estacionImperial.agregarOficial(tarkin);
-
-        log.info("Estación montada: {}", estacionImperial);
+        log.info("Simulador iniciado");
+        Simulacion simulacion;
+        try {
+            simulacion = crearSimulacion(args);
+        } catch (IllegalArgumentException e) {
+            log.error("Argumento no válido: {}. Usa SIN_INCIDENTE o uno de estos incidentes: {}", args[0], Arrays.toString(TipoIncidente.values()));
+            return;
+        }
 
         try {
-            Files.createDirectories(Path.of("datos"));
-            EscritorEstacionXml escritorXml = new EscritorEstacionXml(Path.of("datos", "estructura_estacion.xml"));
-            escritorXml.crearDocumento(estacionImperial);
-            soporteHangares.cambiarEstadoSubsistema(EstadoSubsistema.DEGRADADO, 1);
-            escritorXml.actualizarSubsistema(soporteHangares);
-            escritorXml.actualizarUltimoCiclo(1);
+            simulacion.ejecutar();
+        } catch (AnomaliaCriticaException e) {
+            log.error("Evento crítico capturado en el ciclo {} (sensor {}): {}",
+                    e.getCiclo(), e.getIdSensor(), e.getMessage(), e);
         } catch (IOException e) {
-            log.error("No se pudo escribir el XML de la estación", e);
+            log.error("Error de entrada/salida en los ficheros de datos", e);
         }
-        log.info("Simulación finalizada");
 
+        log.info("Simulador finalizado. Datos en: {}", CARPETA_DATOS.toAbsolutePath());
+    }
+
+    private static Simulacion crearSimulacion(String[] args) {
+        Random random = new Random();
+        if (args.length == 0) {
+            return Simulacion.normal(CARPETA_DATOS, random);
+        }
+        if (args[0].equals(MODO_SIN_INCIDENTE)) {
+            return Simulacion.sinIncidente(CARPETA_DATOS, random);
+        }
+        return Simulacion.conIncidente(CARPETA_DATOS, random, TipoIncidente.valueOf(args[0]));
     }
 }
